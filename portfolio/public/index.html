@@ -29,11 +29,17 @@
     <style>
       body {
         background-color: #121E58;
+        overflow: hidden;
       }
       .circle {
         position: absolute;
         border-radius: 50%;
-        opacity: 0.5;
+        opacity: 0.3;
+        pointer-events: none;
+      }
+      #root {
+        height: 100vh;
+        overflow: auto;
       }
     </style>
   </head>
@@ -72,6 +78,14 @@
         setTimeout(() => {
           circle.style.transform = `scale(0) translate(${dx * 100}px, ${dy * 100}px)`;
         }, 0);
+
+        const checkOutOfBounds = setInterval(() => {
+          const rect = circle.getBoundingClientRect();
+          if (rect.top > window.innerHeight || rect.left > window.innerWidth || rect.bottom < 0 || rect.right < 0) {
+            clearInterval(checkOutOfBounds);
+            circle.remove();
+          }
+        })
 
         setTimeout(() => {
           circle.remove();
