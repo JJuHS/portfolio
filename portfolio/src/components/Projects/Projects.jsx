@@ -1,96 +1,40 @@
 import React, { useEffect, useState } from "react";
 import useStyleStore from '../../store/StyleStore.jsx'
-
-const initialProjectData = [
-    {
-        title:"MOVIEW",
-        description:{
-            planningIntention:"",
-            serviceContents:[],
-            expectEffect:""
-        },
-        startDate: "",
-        endDate:"",
-        url: "",
-        github: "",
-        technologies:[],
-        team:[],
-        images:[],
-        role:[],
-        review:[],
-        experienceResolvingProblem:[],
-    },
-    {
-        title:"COSMOS",
-        description:{
-            planningIntention:"",
-            serviceContents:[],
-            expectEffect:""
-        },
-        startDate: "",
-        endDate:"",
-        url: "",
-        github: "",
-        technologies:[],
-        team:[],
-        images:[],
-        role:[],
-        review:[],
-        experienceResolvingProblem:[],
-    },
-    {
-        title:"WhiteBox",
-        description:{
-            planningIntention:"",
-            serviceContents:[],
-            expectEffect:""
-        },
-        startDate: "",
-        endDate:"",
-        url: "",
-        github: "",
-        technologies:[],
-        team:[],
-        images:[],
-        role:[],
-        review:[],
-        experienceResolvingProblem:[],
-    },
-    {
-        title:"BugTopia",
-        description:{
-            planningIntention:"",
-            serviceContents:[],
-            expectEffect:""
-        },
-        startDate: "",
-        endDate:"",
-        url: "",
-        github: "",
-        technologies:[],
-        team:[],
-        images:[],
-        role:[],
-        review:[],
-        experienceResolvingProblem:[],
-    },
-]
+import GitHubIcon from '../../Assets/static/GitHubIcon.png'
+import { useNavigate } from 'react-router-dom';
+import useDataStore from '../../store/DataStore.jsx';
 
 function Projects () {
+    const navigate = useNavigate();
     const gridOneEmpty = useStyleStore((state) => state.gridOneEmpty);
-    const [ projectData, setProjectData ] = useState([]);
-
-    useEffect(() => {
-        setProjectData(initialProjectData)
-    }, [])
+    const projectList = useDataStore().projectList;
+    
+    const onClickProjectImg = (project) => {
+        navigate(`/projects/${project.title.toLowerCase()}`)
+    }
 
     const renderProject = (project) => {
         return (
-            <div className="col-span-4 w-full border text-main font-semibold h-40">
-                <span>{project.title}</span>
+            <div className="col-span-3 w-full border text-main font-semibold h-48 p-3 m-3">
+                <div className="h-32" onClick={() => onClickProjectImg(project)}>
+                    {/* TODO : 프로젝트 이미지 넣어야함 */}
+                    <img src={project.images[0]} alt="" />
+                </div>
+                <div className="flex flex-row items-center justify-center"
+                    onClick={() => window.open(project.github)}
+                >
+                    <span className="ms-3">{project.title}</span>
+                    <img src={GitHubIcon} alt="" className="h-5 w-5 ms-3 cursor-pointer"/>
+                </div>
+                <div className="flex items-center justify-center mt-1">
+                    <span className="text-xs">
+                        {project.startDate} ~ {project.endDate}
+                    </span>
+                </div>
             </div>
         )
     }
+
     return (
         <div>
             <div className="h-44 w-full flex flex-col items-center justify-center">      
@@ -103,13 +47,14 @@ function Projects () {
                     Here are some of the works I created through the project.
                 </span>
             </div>
-            {/* grid - 12 */}
-            <div className="grid grid-cols-12">
-                {projectData.map((project, index) => (
+            {/* grid - 11 */}
+            <div className="grid grid-cols-11">
+                {projectList.map((project, index) => (
                     <React.Fragment key={index}>
                         {index % 2 === 0 && (<>{gridOneEmpty()}{gridOneEmpty()}</>)}
                         {renderProject(project)}
-                        {index % 2 === 1 && (<>{gridOneEmpty()}{gridOneEmpty()}</>)}
+                        {gridOneEmpty()}
+                        {index % 2 === 1 && (<>{gridOneEmpty()}</>)}
                     </React.Fragment>
                 ))}
             </div>
