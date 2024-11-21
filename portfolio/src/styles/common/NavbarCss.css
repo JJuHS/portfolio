@@ -3,7 +3,7 @@
 }
 
 .navbar-item-hover:hover {
-    background-color: var(--main-light);
+    background-color: var(--main-semi-light);
     color: black;
     animation: nav-hover-border-repeat 1s infinite;
 }
@@ -18,4 +18,11 @@
     100% {
         border-radius: 1rem;
     }
+}
+
+.nav-item-icon {
+    width: 1.6rem;
+    height: 1.6rem;
+    max-width: 1.6rem;
+    max-height: 1.6rem;
 }
