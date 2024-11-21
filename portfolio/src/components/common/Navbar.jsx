@@ -56,7 +56,7 @@ function Navbar () {
     return (
         <Disclosure>
             <div className="sticky top-0 z-40 backdrop-blur w-full mt-0 md:mt-1 lg:mt-0">
-                <div className="grid grid-cols-12 h-16 w-full bg-transparent">
+                <div className="grid grid-cols-12 h-16 w-full">
                     {gridOneEmpty()}
                     {gridOneEmpty()}
                     <div className="col-span-9 relative flex items-center justify-between min-h-16">

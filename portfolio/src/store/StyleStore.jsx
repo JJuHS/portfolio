@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 
-// grid 1칸먹는 div
+// grid 1칸 먹는 div
 const gridOneEmpty = ({ 
     ms="auto", 
     me="auto", 
