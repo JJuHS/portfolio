@@ -26,7 +26,6 @@ function Navbar () {
     const outLinkList = [
         { name: "GitHub", icon:GitHubIcon, current:false, url:"https://github.com/jjuHS/portfolio/" },
         { name: "Tistory", icon:TistoryIcon, current:false, url:"https://developer-traxer.tistory.com/" },
-
     ]
 
     const handleNavItemClick = (toward) => {
@@ -91,7 +90,7 @@ function Navbar () {
                                 </Menu.Button>
                                 {/* 드롭다운 메뉴들 */}
                                 <Menu.Items 
-                                    className="absolute right-0 w-56 mt-2 origin-top-right rounded-xl"
+                                    className="absolute right-0 w-56 mt-2 origin-top-right rounded-xl nav-dropdown-item-list opacity-80 border-none"
                                     as="div"
                                 >
                                         {navbarList.map((item) => (
@@ -100,11 +99,11 @@ function Navbar () {
                                                     key={item.name}
                                                     onClick={() => handleNavItemClick(item.name)}
                                                     aria-current={item.current ? "page" : undefined}
-                                                    className="hover:border-none navbar-item-hover cursor-pointer text-white items-center p-3 border-b z-index-50"
+                                                    className="hover:border-none navbar-item-hover cursor-pointer text-white items-center p-3 z-index-50 bg-main-dark backdrop-blur-sm"
                                                 >
                                                     <span className="flex justify-center text-xl">
                                                         <img src={item.icon} alt="" className="nav-item-icon"/>&nbsp;
-                                                        {item.name}
+                                                        <span className="border-b">{item.name}</span>
                                                     </span>
                                                 </p>
                                             </Menu.Item>
@@ -115,11 +114,11 @@ function Navbar () {
                                                     key={item.name}
                                                     onClick={() => handleNavItemClick(item.name)}
                                                     aria-current={item.current ? "page" : undefined}
-                                                    className="hover:border-none navbar-item-hover cursor-pointer text-white items-center p-3 border-b z-index-50"
+                                                    className="hover:border-none navbar-item-hover cursor-pointer text-white items-center p-3 z-index-50 bg-main-dark backdrop-blur-sm"
                                                 >
                                                     <span className="flex justify-center text-xl">
                                                         <img src={item.icon} alt="" className="nav-item-icon"/>&nbsp;
-                                                        {item.name}
+                                                        <span className="border-b">{item.name}</span>
                                                     </span>
                                                 </p>
                                             </Menu.Item>
