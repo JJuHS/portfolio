@@ -74,7 +74,7 @@ function Navbar () {
                             <Menu as="div" className="relative inline-block text-white ">
                                 {/* 햄버거아이콘 */}
                                 <Menu.Button 
-                                    className="flex items-center hover:bg-main-semi-dark p-2 rounded-xl bg-main"
+                                    className="flex items-center hover:bg-main p-2 rounded-xl bg-main-heavy-dark"
                                     // inline-flex justify-center 0 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500
                                 >
                                     <svg
@@ -90,7 +90,7 @@ function Navbar () {
                                 </Menu.Button>
                                 {/* 드롭다운 메뉴들 */}
                                 <Menu.Items 
-                                    className="absolute right-0 w-56 mt-2 origin-top-right rounded-xl nav-dropdown-item-list opacity-80 border-none"
+                                    className="bg-main-dark rounded absolute right-0 w-56 mt-2 origin-top-right rounded-xl nav-dropdown-item-list opacity-80 border-none"
                                     as="div"
                                 >
                                         {navbarList.map((item) => (
@@ -99,7 +99,7 @@ function Navbar () {
                                                     key={item.name}
                                                     onClick={() => handleNavItemClick(item.name)}
                                                     aria-current={item.current ? "page" : undefined}
-                                                    className="hover:border-none navbar-item-hover cursor-pointer text-white items-center p-3 z-index-50 bg-main-dark backdrop-blur-sm"
+                                                    className="hover:border-none navbar-item-hover cursor-pointer text-white items-center p-3 z-index-50 backdrop-blur-sm"
                                                 >
                                                     <span className="flex justify-center text-xl">
                                                         <img src={item.icon} alt="" className="nav-item-icon"/>&nbsp;
@@ -114,7 +114,7 @@ function Navbar () {
                                                     key={item.name}
                                                     onClick={() => handleNavItemClick(item.name)}
                                                     aria-current={item.current ? "page" : undefined}
-                                                    className="hover:border-none navbar-item-hover cursor-pointer text-white items-center p-3 z-index-50 bg-main-dark backdrop-blur-sm"
+                                                    className="hover:border-none navbar-item-hover cursor-pointer text-white items-center p-3 z-index-50 backdrop-blur-sm"
                                                 >
                                                     <span className="flex justify-center text-xl">
                                                         <img src={item.icon} alt="" className="nav-item-icon"/>&nbsp;
