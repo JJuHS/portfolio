@@ -21,7 +21,7 @@ jobs:
     - name: Deploy to Server
       run: |
         ssh -o StrictHostKeyChecking=no ubuntu@3.35.51.121 << 'EOF'
-        cd /home/ubuntu/git/portfolio/
+        cd /home/ubuntu/git/portfolio/portfolio/
         git pull origin master
         npm install
         npm run build
