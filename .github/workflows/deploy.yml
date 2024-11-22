@@ -3,7 +3,7 @@ name: Deploy React App
 on:
   push:
     branches:
-      - master  # main 브랜치에 푸시될 때 실행
+      - master  # master 브랜치에 푸시될 때 실행
 
 jobs:
   deploy:
@@ -28,3 +28,15 @@ jobs:
         sudo cp -r build/* /var/www/html
         sudo systemctl restart nginx
         EOF
+        
+    - name: Send email notification
+      uses: dawidd6/action-send-mail@v3
+      with:
+        server_address: smtp.gmail.com
+        server_port: 587
+        username: ${{ secrets.SMTP_USERNAME }}
+        password: ${{ secrets.SMTP_PASSWORD }}
+        subject: "Deployment Complete"
+        to: "ghtjd006908@gmail.com"
+        from: "ghtjd6908-JJuHS-portfolio@github.com"
+        body: "Build Success"
