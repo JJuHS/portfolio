@@ -51,6 +51,8 @@ function Projects () {
     };
 
     const renderProject = (project, sizeClass) => {
+        console.log(sizeClass);
+        
         return (
             <div className={`col-span-${sizeClass} w-full border text-main font-semibold h-48 p-3 m-3`}>
                 <div 
@@ -108,7 +110,7 @@ function Projects () {
                     </React.Fragment>
                 ))}
             </div>
-            {/* size xl ~ 12: 1 2 1 2 1 2 1*/}
+            {/* size xl ~ 10: 1 2 1 2 1 2 1*/}
             <div className="hidden xl:grid xl:grid-cols-10">
                 {projectList.map((project, index) => (
                     <React.Fragment key={index}>
