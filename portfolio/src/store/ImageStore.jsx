@@ -1,0 +1,98 @@
+import React from "react";
+import { create } from "zustand";
+
+// MOVIEW
+import moviewHomeDescription from '../Assets/projects/moview/home/description.png';
+import moviewHomeNowPlaying from '../Assets/projects/moview/home/now_playing.png';
+import moviewHomeUpcoming from '../Assets/projects/moview/home/upcoming.png';
+import moviewCommunityBest from '../Assets/projects/moview/community/community_best.png';
+import moviewCommunityDetail from '../Assets/projects/moview/community/community_detail.png';
+import moviewCommunity from '../Assets/projects/moview/community/community.png';
+import moviewMovieDetail01 from '../Assets/projects/moview/movie/movie_detail_1.png';
+import moviewMovieDetail02 from '../Assets/projects/moview/movie/movie_detail_2.png';
+import moviewMovieDetail03 from '../Assets/projects/moview/movie/movie_detail_3.png';
+import moviewMovieDetail04 from '../Assets/projects/moview/movie/movie_detail_4.png';
+import moviewMovieWhole from '../Assets/projects/moview/movie/whole_movie/whole.png';
+import moviewMovieWholeKorean from '../Assets/projects/moview/movie/whole_movie/korean.png';
+import moviewMovieWholeKoreanAction from '../Assets/projects/moview/movie/whole_movie/korean_action.png';
+import moviewMovieWholeKoreanActionDate from '../Assets/projects/moview/movie/whole_movie/korean_action_date.png';
+import moviewProfile from '../Assets/projects/moview/profile/profile.png';
+import moviewProfileUpdate from '../Assets/projects/moview/profile/profile_update.png';
+import moviewRecommendAgeGender from '../Assets/projects/moview/recommend/rec_age&gender.png';
+import moviewRecommendGenre from '../Assets/projects/moview/recommend/rec_genres.png';
+import moviewRecommendMovie from '../Assets/projects/moview/recommend/rec_movie.png';
+import moviewRecommendTag from '../Assets/projects/moview/recommend/rec_tag.png';
+import moviewRecommendWeatherTime from '../Assets/projects/moview/recommend/rec_weather&time.png';
+// COSMOS
+import cosmosGroupCode from '../Assets/projects/cosmos/group-code.png';
+import cosmosGroupInvite from '../Assets/projects/cosmos/group-invite.png';
+import cosmosGroupMain from '../Assets/projects/cosmos/group-main.png';
+import cosmosGroupOverview from '../Assets/projects/cosmos/group-overview.png';
+import cosmosGroupSetting from '../Assets/projects/cosmos/group-setting.png';
+import cosmosGroupTimeoverview from '../Assets/projects/cosmos/group-time-overview.png';
+import cosmosConference from '../Assets/projects/cosmos/conferencepage.png';
+import cosmosAuthLogin from '../Assets/projects/cosmos/login.png';
+import cosmosAuthMycodepage from '../Assets/projects/cosmos/mycodepage.png';
+import cosmosAuthPasswordchange from '../Assets/projects/cosmos/passwordchange.png';
+import cosmosAuthPasswordfind from '../Assets/projects/cosmos/passwordfind.png';
+import cosmosAuthSignup from '../Assets/projects/cosmos/signup.png';
+import cosmosAuthUserinfo from '../Assets/projects/cosmos/userinfo.png';
+import cosmosAuthUserinfochange from '../Assets/projects/cosmos/userinfochange.png';
+
+// MOVIEW
+export const moviewImgStore = create((set) => ({
+    moviewHomeDescription,
+    moviewHomeNowPlaying,
+    moviewHomeUpcoming,
+    moviewCommunityBest,
+    moviewCommunityDetail,
+    moviewCommunity,
+    moviewMovieDetail01,
+    moviewMovieDetail02,
+    moviewMovieDetail03,
+    moviewMovieDetail04,
+    moviewMovieWhole,
+    moviewMovieWholeKorean,
+    moviewMovieWholeKoreanAction,
+    moviewMovieWholeKoreanActionDate,
+    moviewProfile,
+    moviewProfileUpdate,
+    moviewRecommendAgeGender,
+    moviewRecommendGenre,
+    moviewRecommendMovie,
+    moviewRecommendTag,
+    moviewRecommendWeatherTime,
+}))
+
+// COSMOS
+export const cosmosImgStore = create((set) => ({
+    cosmosGroupCode,
+    cosmosGroupInvite,
+    cosmosGroupMain,
+    cosmosGroupOverview,
+    cosmosGroupSetting,
+    cosmosGroupTimeoverview,
+    cosmosConference,
+    cosmosAuthLogin,
+    cosmosAuthMycodepage,
+    cosmosAuthPasswordchange,
+    cosmosAuthPasswordfind,
+    cosmosAuthSignup,
+    cosmosAuthUserinfo,
+    cosmosAuthUserinfochange,
+}))
+
+// WhiteBox
+export const whiteboxImgStore = create((set) => ({
+
+}))
+
+// Bugtopia
+export const bugtopiaImgStore = create((set) => ({
+
+}))
+
+// Portfolio
+export const portfolioImgStore = create((set) => ({
+
+}))

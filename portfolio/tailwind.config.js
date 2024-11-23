@@ -3,7 +3,7 @@ module.exports = {
     content: ["./src/**/*.{html,js,jsx,ts,tsx}"],
     theme: {
         extend: {
-            fintFamily: {
+            fontFamily: {
                 'regular': ['PaperlogyFont-Regular'],
                 'semibold': ['PaperlogyFont-Semibold'],
                 'bold': ['PaperlogyFont-Bold'],
