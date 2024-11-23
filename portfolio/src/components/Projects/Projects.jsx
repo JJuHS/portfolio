@@ -51,10 +51,8 @@ function Projects () {
     };
 
     const renderProject = (project, sizeClass) => {
-        console.log(sizeClass);
-        
-        return (
-            <div className={`col-span-${sizeClass} w-full border text-main font-semibold h-48 p-3 m-3`}>
+        const inside = (
+            <>
                 <div 
                     className="h-32 cursor-pointer" 
                     onClick={() => onClickProjectImg(project)}
@@ -74,8 +72,31 @@ function Projects () {
                         {project.startDate} ~ {project.endDate}
                     </span>
                 </div>
-            </div>
+            </>
         )
+        switch (sizeClass) {
+            case 2:
+                return (
+                    <div className="col-span-2 w-full border text-main font-semibold h-48 p-3 m-3">
+                        {inside}
+                    </div>
+                )
+            case 4:
+                return (
+                    <div className="col-span-4 w-full border text-main font-semibold h-48 p-3 m-3">
+                        {inside}
+                    </div>
+                )
+            case 6:
+                return (
+                    <div className="col-span-6 w-full border text-main font-semibold h-48 p-3 m-3">
+                        {inside}
+                    </div>
+                )
+        
+            default:
+                break;
+        }
     }
 
     return (
@@ -95,7 +116,7 @@ function Projects () {
                 {projectList.map((project, index) => (
                     <React.Fragment key={index}>
                         {gridOneEmpty()}{gridOneEmpty()}{gridOneEmpty()}
-                        {renderProject(project, '6')}
+                        {renderProject(project, 6)}
                         {gridOneEmpty()}{gridOneEmpty()}{gridOneEmpty()}
                     </React.Fragment>
                 ))}
@@ -105,7 +126,7 @@ function Projects () {
                 {projectList.map((project, index) => (
                     <React.Fragment key={index}>
                         {gridOneEmpty()}
-                        {renderProject(project, '4')}
+                        {renderProject(project, 4)}
                         {index % 2 === 1 ? gridOneEmpty() : null}
                     </React.Fragment>
                 ))}
@@ -115,7 +136,7 @@ function Projects () {
                 {projectList.map((project, index) => (
                     <React.Fragment key={index}>
                         {gridOneEmpty()}
-                        {renderProject(project, '2')}
+                        {renderProject(project, 2)}
                         {index % 3 === 2 ? gridOneEmpty() : null}
                     </React.Fragment>
                 ))}
