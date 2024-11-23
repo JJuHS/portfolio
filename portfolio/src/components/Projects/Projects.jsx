@@ -7,62 +7,59 @@ import useDataStore from '../../store/DataStore.jsx';
 function Projects () {
     const navigate = useNavigate();
     const gridOneEmpty = useStyleStore((state) => state.gridOneEmpty);
-    const projectList = useDataStore().projectList;
+    const fetchedProjectList = useDataStore().projectList;
+    const [ projectList, setProjectList ] = useState(fetchedProjectList)
+    const [imageIndexes, setImageIndexes] = useState({});
+    const [intervals, setIntervals] = useState({});
     
+    useEffect(() => {
+        const initialImageIndexes = fetchedProjectList.reduce((acc, project) => ({
+            ...acc,
+            [project.id]: 0
+        }), {});
+
+        setImageIndexes(initialImageIndexes);
+        setIntervals({});
+    }, [fetchedProjectList]);
+
     const onClickProjectImg = (project) => {
         navigate(`/projects/${project.title.toLowerCase()}`)
     }
 
-    const renderProjectSmall = (project) => {
-        return (
-            <div className="col-span-6 w-full border text-main font-semibold h-48 p-3 m-3">
-                <div className="h-32" onClick={() => onClickProjectImg(project)}>
-                    {/* TODO : 프로젝트 이미지 넣어야함 */}
-                    <img src={project.images[0]} alt="" />
-                </div>
-                <div className="flex flex-row items-center justify-center"
-                    onClick={() => window.open(project.github)}
-                >
-                    <span className="ms-3">{project.title}</span>
-                    <img src={GitHubIcon} alt="" className="h-5 w-5 ms-3 cursor-pointer"/>
-                </div>
-                <div className="flex items-center justify-center mt-1">
-                    <span className="text-xs">
-                        {project.startDate} ~ {project.endDate}
-                    </span>
-                </div>
-            </div>
-        )
-    }
+    const startSlideshow = (projectId) => {
+        if (!projectList.find(project => project.id === projectId).images) return;
 
-    const renderProjectMiddle = (project) => {
-        return (
-            <div className="col-span-4 w-full border text-main font-semibold h-48 p-3 m-3">
-                <div className="h-32" onClick={() => onClickProjectImg(project)}>
-                    {/* TODO : 프로젝트 이미지 넣어야함 */}
-                    <img src={project.images[0]} alt="" />
-                </div>
-                <div className="flex flex-row items-center justify-center"
-                    onClick={() => window.open(project.github)}
-                >
-                    <span className="ms-3">{project.title}</span>
-                    <img src={GitHubIcon} alt="" className="h-5 w-5 ms-3 cursor-pointer"/>
-                </div>
-                <div className="flex items-center justify-center mt-1">
-                    <span className="text-xs">
-                        {project.startDate} ~ {project.endDate}
-                    </span>
-                </div>
-            </div>
-        )
-    }
+        const interval = setInterval(() => {
+            setImageIndexes(prevIndexes => {
+                const currentIndex = prevIndexes[projectId] || 0;
+                const project = projectList.find(p => p.id === projectId);
+                const nextIndex = (currentIndex + 1) % project.images.length;
+                return { ...prevIndexes, [projectId]: nextIndex };
+            });
+        }, 600);
 
-    const renderProjectLarge = (project) => {
+        setIntervals(prevIntervals => ({ ...prevIntervals, [projectId]: interval }));
+    };
+
+    const stopSlideshow = (projectId) => {
+        clearInterval(intervals[projectId]);
+        setIntervals(prevIntervals => {
+            const newIntervals = { ...prevIntervals };
+            delete newIntervals[projectId];
+            return newIntervals;
+        });
+    };
+
+    const renderProject = (project, sizeClass) => {
         return (
-            <div className="col-span-2 w-full border text-main font-semibold h-48 p-3 m-3">
-                <div className="h-32" onClick={() => onClickProjectImg(project)}>
-                    {/* TODO : 프로젝트 이미지 넣어야함 */}
-                    <img src={project.images[0]} alt="" />
+            <div className={`col-span-${sizeClass} w-full border text-main font-semibold h-48 p-3 m-3`}>
+                <div 
+                    className="h-32 cursor-pointer" 
+                    onClick={() => onClickProjectImg(project)}
+                    onMouseEnter={() => startSlideshow(project.id)}
+                    onMouseLeave={() => stopSlideshow(project.id)}
+                >
+                    <img src={project.images[imageIndexes[project.id]]} alt="" />
                 </div>
                 <div className="flex flex-row items-center justify-center"
                     onClick={() => window.open(project.github)}
@@ -96,7 +93,7 @@ function Projects () {
                 {projectList.map((project, index) => (
                     <React.Fragment key={index}>
                         {gridOneEmpty()}{gridOneEmpty()}{gridOneEmpty()}
-                        {renderProjectSmall(project)}
+                        {renderProject(project, '6')}
                         {gridOneEmpty()}{gridOneEmpty()}{gridOneEmpty()}
                     </React.Fragment>
                 ))}
@@ -106,7 +103,7 @@ function Projects () {
                 {projectList.map((project, index) => (
                     <React.Fragment key={index}>
                         {gridOneEmpty()}
-                        {renderProjectMiddle(project)}
+                        {renderProject(project, '4')}
                         {index % 2 === 1 ? gridOneEmpty() : null}
                     </React.Fragment>
                 ))}
@@ -116,7 +113,7 @@ function Projects () {
                 {projectList.map((project, index) => (
                     <React.Fragment key={index}>
                         {gridOneEmpty()}
-                        {renderProjectLarge(project)}
+                        {renderProject(project, '2')}
                         {index % 3 === 2 ? gridOneEmpty() : null}
                     </React.Fragment>
                 ))}
