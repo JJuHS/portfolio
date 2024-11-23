@@ -22,11 +22,19 @@ function Projects () {
         setIntervals({});
     }, [fetchedProjectList]);
 
+    useEffect(() => {
+        return () => {
+            Object.values(intervals).forEach(interval => clearInterval(interval));
+        };
+    }, [intervals]);
+
     const onClickProjectImg = (project) => {
         navigate(`/projects/${project.title.toLowerCase()}`)
     }
 
     const startSlideshow = (projectId) => {
+        if (intervals[projectId]) return;
+
         if (!projectList.find(project => project.id === projectId).images) return;
 
         const interval = setInterval(() => {
@@ -51,15 +59,25 @@ function Projects () {
     };
 
     const renderProject = (project, sizeClass) => {
-        const inside = (
-            <>
+        const sizeClassDict = {
+            2: "col-span-2 w-full border text-main font-semibold h-60 p-3 m-3",
+            4: "col-span-4 w-full border text-main font-semibold h-60 p-3 m-3",
+            6: "col-span-6 w-full border text-main font-semibold h-60 p-3 m-3",
+        }
+        
+        return (
+            <div className={sizeClassDict[sizeClass]} >
                 <div 
-                    className="h-32 cursor-pointer" 
+                    className="h-44 cursor-pointer flex justify-center" 
                     onClick={() => onClickProjectImg(project)}
                     onMouseEnter={() => startSlideshow(project.id)}
                     onMouseLeave={() => stopSlideshow(project.id)}
                 >
-                    <img src={project.images[imageIndexes[project.id]]} alt="" />
+                    <img 
+                        src={project.images[imageIndexes[project.id]]} 
+                        alt="" 
+                        className="h-40"
+                    />
                 </div>
                 <div className="flex flex-row items-center justify-center"
                     onClick={() => window.open(project.github)}
@@ -72,31 +90,8 @@ function Projects () {
                         {project.startDate} ~ {project.endDate}
                     </span>
                 </div>
-            </>
-        )
-        switch (sizeClass) {
-            case 2:
-                return (
-                    <div className="col-span-2 w-full border text-main font-semibold h-48 p-3 m-3">
-                        {inside}
-                    </div>
-                )
-            case 4:
-                return (
-                    <div className="col-span-4 w-full border text-main font-semibold h-48 p-3 m-3">
-                        {inside}
-                    </div>
-                )
-            case 6:
-                return (
-                    <div className="col-span-6 w-full border text-main font-semibold h-48 p-3 m-3">
-                        {inside}
-                    </div>
-                )
-        
-            default:
-                break;
-        }
+            </div>
+        )   
     }
 
     return (

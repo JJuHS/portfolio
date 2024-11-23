@@ -158,8 +158,17 @@ const projectListData = [
     },
 ]
 
+const projectTitleToIndex = {
+    'moview':0,
+    'cosmos':1,
+    'whitebox':2,
+    'bugtopia':3,
+    'portfolio':4,
+}
+
 const useDataStore = create((set) => ({
-    projectList: projectListData
+    projectList: projectListData,
+    projectTitleToIndex: projectTitleToIndex
 }))
 
 export default useDataStore;
