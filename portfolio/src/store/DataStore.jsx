@@ -86,7 +86,10 @@ const projectListData = [
         description:{
             planningIntention:"증가하는 교통사고와 고통사고 분쟁을 해결하기 위한 AI 과실판단서비스",
             serviceContents:{
-                "":[],
+                "유저기능":[],
+                "교통사고분석기능":["교통사고 영상 과실 비율 판단 및 법령 정보 제공"],
+                "커뮤니티기능":[],
+                "투표기능":[],
             },
             expectEffect:""
         },
@@ -103,7 +106,9 @@ const projectListData = [
             "개선점: ",
             "배운점: ",
         ],
-        experienceResolvingProblem:[],
+        experienceResolvingProblem:[
+            "",
+        ],
     },
 
     // 4. Bugtopia
