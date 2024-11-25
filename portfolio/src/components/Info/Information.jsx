@@ -52,14 +52,19 @@ function Information() {
         <div className="mt-4">
             <h2 className="text-xl font-semibold">Projects</h2>
             {projectList.map((project, indexedDB) => (
-                <div key={indexedDB} className="border-b border-main-semi-light p-4">
-                    <h3 className="text-lg font-semibold">{project.title}</h3>
-                    <p className="flex">
-                        {project.description.planningIntention}&nbsp;&nbsp;&nbsp;
-                        <img src={linkIcon} onClick={() => navigate(`/projects/${project.title.toLowerCase()}`)} className="h-6 w-6 cursor-pointer"/>
-                    </p>
-                    
-                </div>
+                project.completeDataCreation ? 
+                    (
+                        <div key={indexedDB} className="border-b border-main-semi-light p-4">
+                            <h3 className="text-lg font-semibold">{project.title}</h3>
+                            <p className="flex">
+                                {project.description.planningIntention}&nbsp;&nbsp;&nbsp;
+                                <img src={linkIcon} onClick={() => navigate(`/projects/${project.title.toLowerCase()}`)} className="h-6 w-6 cursor-pointer"/>
+                            </p>
+                            
+                        </div>
+                    )
+                    : null
+                
             ))}
         </div>
 

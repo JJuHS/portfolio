@@ -55,6 +55,7 @@ const projectListData = [
             "영화 데이터를 로드하는 과정에서 처리 시간이 오래 걸리는 문제가 발생했다. 이를 해결하기 위해 일부 데이터는 실시간으로 axios를 통해 불러오고, 나머지 데이터는 데이터베이스에서 관리하는 방식으로 시스템을 분산시켰다. 이러한 분산 처리 방식은 데이터 로딩 시간을 크게 단축시켜 사용자 경험을 개선했다.",
             "프로젝트는 단 두 명의 팀원이 6일 동안 진행해야 했기 때문에 시간과 자원이 매우 제한적이었다. 이에 불구하고 우리는 각자의 역할에 집중하고 효율적으로 시간을 관리하여 프로젝트에서 목표한 모든 기능을 성공적으로 완성할 수 있었다. 이 과정에서 팀워크의 중요성과 집중력이 가져다주는 결과를 몸소 체험하게 되었다."
         ],
+        completeDataCreation:true,
     },
 
     // 2. COSMOS - 완료
@@ -98,6 +99,7 @@ const projectListData = [
         experienceResolvingProblem:[
             "코드나 문서를 수정하게 되면 그 수정한 코드가 그 페이지를 보고 있는 다른 사용자에게 적용될 때, 글자의 Doubling이 일어나는 현상이 있었다. 문서 및 코드 수정시에 작성자의 userId를 같이 전송하여 충돌을 해결했다.",
         ],
+        completeDataCreation:true,
     },
 
     // 3. WhiteBox
@@ -142,6 +144,7 @@ const projectListData = [
         experienceResolvingProblem:[
             "",
         ],
+        completeDataCreation:true,
     },
 
     // 4. Bugtopia
@@ -177,6 +180,7 @@ const projectListData = [
             "배운점: 새로운 기술을 익히고 구현해나가는 과정이 재밌었고, 또 처음 사용해보는 C#언어를 다루었다.",
         ],
         experienceResolvingProblem:[],
+        completeDataCreation:true,
     },
     // 5. Portfolio
     {
@@ -198,6 +202,7 @@ const projectListData = [
         myImplementation:[],
         review:[],
         experienceResolvingProblem:[],
+        completeDataCreation:false,
     },
 ]
 

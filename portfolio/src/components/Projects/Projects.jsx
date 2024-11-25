@@ -59,6 +59,7 @@ function Projects () {
     };
 
     const renderProject = (project, sizeClass) => {
+        if (!project.completeDataCreation) return null;
         const sizeClassDict = {
             2: "col-span-2 w-full border text-main font-semibold h-60 p-3 m-3",
             4: "col-span-4 w-full border text-main font-semibold h-60 p-3 m-3",
