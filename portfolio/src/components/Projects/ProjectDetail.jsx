@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from 'react-router-dom';
 import useDataStore from '../../store/DataStore.jsx';
-import useStyleStore from '../../store/StyleStore.jsx'
+import useStyleStore from '../../store/StyleStore.jsx';
 
 function ProjectDetail () {
     const gridOneEmpty = useStyleStore((state) => state.gridOneEmpty);
@@ -43,9 +43,9 @@ function ProjectDetail () {
         return (
             <div className="grid grid-cols-12 mt-4 w-11/12 divide-y">
                 {gridOneEmpty()}
-                <div className="col-span-2 text-left">{title}</div>
+                <div className="col-span-2 text-left text-main-semi-light">{title}</div>
                 {gridOneEmpty()}
-                <div className="col-span-6 text-left overflow">
+                <div className="col-span-6 text-left overflow text-main-semi-light">
                     {typeof content === "object" && content !== null ? (
                         Object.keys(content).map((key, index) => (
                             /^\d+$/.test(key) ? 
@@ -91,9 +91,9 @@ function ProjectDetail () {
                 {renderProjectInfoDetail("팀", project.team)}
                 {renderProjectInfoDetail("기술스택", project.technologies)}
                 {renderProjectInfoDetail("나의 역할", project.role)}
+                {renderProjectInfoDetail("내가 구현한 내용", project.myImplementation)}
                 {renderProjectInfoDetail("후기", project.review)}
                 {renderProjectInfoDetail("문제해결경험", project.experienceResolvingProblem)}
-
                 {renderProjectInfoDetail("프로젝트", project.startDate + " 부터")}
                 {renderProjectInfoDetail("기간", project.endDate + " 까지")}
             </div>
@@ -103,10 +103,3 @@ function ProjectDetail () {
 }
 
 export default ProjectDetail;
-
-//     <div>기술스택: {project.technologies}</div>
-//     <div>팀원: {project.team}</div>
-//     <div>이미지: {project.images}</div>
-//     <div>역할: {project.role}</div>
-//     <div>후기: {project.review}</div>
-//     <div>문제해결경험: {project.experienceResolvingProblem}</div>

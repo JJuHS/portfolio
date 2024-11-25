@@ -35,6 +35,16 @@ const projectListData = [
         team:["김혜민", "정호성"],
         images: Object.values(moviewImgStore.getState()),
         role:["Backend"],
+        myImplementation:[
+            "서비스 기획",
+            "Django Framework를 통한 Backend서버 구축",
+            "사용자 인증 시스템 구현 (jwt token)",
+            "MySQL 데이터베이스 설계 및 관리 (유저, 영화, 리뷰, 커뮤니티 등 데이터 모델링",
+            "RESTful API 설계 및 구현 (영화 검색, 추천, 리뷰, 커뮤니티 기능 등)",
+            "AI를 활용한 영화 추천 알고리즘 개발 및 통합 (사용자 기반, 콘텐츠 기반, 상황 기반 추천)",
+            "외부 영화 데이터 API 연동 및 데이터 처리",
+            "Axios를 활용한 프론트엔드와의 API 통신 설정"
+        ],
         review:[
             "아쉬운 점 : 촉박한 일정 때문에 여러 다른 기능 구현에 시간을 쏟지 못했다.",
             "개선점 : 협업능력 및 코드 다이어트, 성능 최적화를 해보고 싶다.",
@@ -68,6 +78,18 @@ const projectListData = [
         team:["김도한", "김효준", "곽지혁", "정예은", "정호성", "지경근"],
         images: Object.values(cosmosImgStore.getState()),
         role:["FrontEnd", "FrontEnd-Leader", ],
+        myImplementation:[
+            "그룹 관련 모든 페이지의 UI/UX 설계 및 React를 활용한 구현",
+            "그룹 초대, 참여, 탈퇴 기능의 프론트엔드 로직 개발 및 API 연동",
+            "그룹 내부 일정 관리 및 스터디 생성/삭제 페이지 구현",
+            "문제를 사이트 및 번호로 불러오는 기능 개발",
+            "그룹원의 문제 제출 여부 및 풀이 확인 기능 구현",
+            "풀이 페이지에서 코드 편집 및 컴파일 기능 개발",
+            "그룹원의 풀이를 자동으로 불러오는 기능 구현",
+            "내가 푼 코드 목록을 불러오는 페이지 개발",
+            "React Zustand로 상태 관리 및 Axios를 통한 API 통신 설정",
+            "코드 컴파일 및 실행 결과를 반환받는 기능 구현"
+        ],
         review:[
             "아쉬운 점: 실시간 문서 동시작업을 구현하는 데에 너무 오랜시간을 사용했다.",
             "개선점: 공식문서를 통해 공부하는 습관을 익히고, 새로운 기술에 대한 두려움을 없애고 도전하는 정신이 중요하다고 생각했다.",
@@ -79,19 +101,20 @@ const projectListData = [
     },
 
     // 3. WhiteBox
-    // TODO: 기능소개, 기대효과, 후기, 문제해결경험, 이미지
+    // TODO: 문제해결경험, 이미지
     {
         id:2,
         title:"WhiteBox",
         description:{
             planningIntention:"증가하는 교통사고와 고통사고 분쟁을 해결하기 위한 AI 과실판단서비스",
             serviceContents:{
-                "유저기능":[],
-                "교통사고분석기능":["교통사고 영상 과실 비율 판단 및 법령 정보 제공"],
-                "커뮤니티기능":[],
-                "투표기능":[],
+                "유저기능":["로그인/회원가입", "변호사협회 DB를 이용한 변호사인증", "프로필보기 - 자신의 사고내역, 참여한 투표, 쓴 글 확인"],
+                "교통사고분석기능":["교통사고 영상 과실 비율 판단 - RCNN과 ResNet50", "LLM을 통한 관련 판례 및 법률 제공"],
+                "커뮤니티기능":["교통관련 주제를 다루는 커뮤니티 기능"],
+                "투표기능":["AI판독결과를 바탕으로 사용자들이 과실비율을 투표하는 기능", "변호사인증사용자의 경우 변호사 인증마크표시","투표결과를 댓글에 함께 표시"],
+                "정보제공기능":["교통사고 관련 법률 및 개정법 정보 제공", "과실상계 및 절차에 대한 정보 제공", "교통사고 관련 용어 정보 제공", "교통사고 관련 사이트 정보 제공"]
             },
-            expectEffect:""
+            expectEffect:"교통사고 과실비율을 산정하기 위해 소요되는 시간과 비용을 절감할 수 있다. 보험사 및 법률전문기관의 업무 부담을 완하시키며 교통사고의 통계자료로서 활용할 수 있다."
         },
         startDate: "24.08.26",
         endDate:"24.10.11",
@@ -101,10 +124,20 @@ const projectListData = [
         team:["김근욱", "민호", "송인범", "신우호", "정호성", "차재훈"],
         images: Object.values(whiteboxImgStore.getState()),
         role:["FrontEnd", "FrontEnd-Leader"],
+        myImplementation:[
+            "메인 페이지 UI/UX 설계 및 React를 활용한 구현",
+            "유저 관련 페이지 (회원가입, 로그인, 프로필 보기, 사고내역, 투표, 게시글 확인) 개발 및 API 연동",
+            "AI 분석 결과를 시각화하는 교통사고 분석 페이지 개발",
+            "AI 기반 과실 비율 판단 결과를 투표로 연결하는 기능 구현",
+            "커뮤니티 기능 관련 페이지 개발 (글 작성, 댓글, 투표 기능 통합)",
+            "교통사고 관련 법률, 용어, 절차 및 사이트 정보를 제공하는 정보 게시판 페이지 개발",
+            "Axios를 통한 백엔드 API 통신 설정 및 상태 관리 로직 구현",
+            "React Router를 활용한 페이지 네비게이션 및 구조 설계",
+            "페이지 성능 최적화를 위해 코드 다이어트 및 컴포넌트 분리"
+        ],
         review:[
-            "아쉬운 점: ",
-            "개선점: ",
-            "배운점: ",
+            "아쉬운 점: 충분히 컴포넌트화 시킬 수 있던 것들을 컴포넌트로 만들지 못했던 코드가 일부 있었고, 코드가 길어지고 가독성이 떨어졌던 것 같다. 구현하기 전에 컴포넌트의 구조화에 대해 좀 더 신경쓰고 문서화를 할 필요가 있다고 느꼈다.",
+            "배운점: React를 이용한 반응형 디자인과 스토어 관리를 통한 화면 구현, axios를 이용한 백엔드 서버와의 통신에 많은 경험치가 쌓인 것 같다. tailwindCSS를 사용해 보았고, 더 많은 프레임워크를 사용해 보고 싶다.",
         ],
         experienceResolvingProblem:[
             "",
@@ -112,19 +145,18 @@ const projectListData = [
     },
 
     // 4. Bugtopia
-    // TODO: 기능소개, 기대효과, 후기, 문제해결경험, 이미지
+    // TODO: 후기, 문제해결경험, 이미지
     {
         id:3,
         title:"Bugtopia",
         description:{
             planningIntention:"아이들이 곤충을 관찰하고 돌보며 곤충 생태계를 학습할 수 있는 교육용 애플리케이션",
             serviceContents:{
-                "회원기능":[],
-                "채집기능":[],
-                "AR기능":[],
-                "도감기능":[],
+                "채집기능":["실제 곤충을 촬영해서 불러오는 기능", "AI를 활용해 곤충의 종류를 파악하는 기능"],
+                "AR기능":["카메라 화면에 곤충을 불러오는 기능", "먹이주기 - 곤충에게 먹이를 주면 곤충이 다가와서 먹이를 먹는 기능", "놀아주기 - 나무를 놓아주면 곤충이 나무로 날아가는 기능"],
+                "도감기능":["키웠던, 잡았던 곤충을 모아볼 수 있는 기능"],
             },
-            expectEffect:""
+            expectEffect:"아이들에게 곤충 체험의 교육적 가치를 제공하며, 인지 기능을 향상시키고 자연과의 정서적 연결을 가능하게 해준다."
         },
         startDate: "24.10.14",
         endDate:"24.11.29",
@@ -134,10 +166,15 @@ const projectListData = [
         team:["강민서", "김민채", "서지흔", "서희", "정호성", "조원우"],
         images: Object.values(bugtopiaImgStore.getState()),
         role:["AI", "UnityScene"],
+        myImplementation:[
+            "곤충 채집 AI 구현 - YOLO",
+            "앱 진입화면 및 닉네임 설정화면 구현 및 API 연결",
+            "곤충 채집화면 구현 및 API 연결",
+        ],
         review:[
-            "아쉬운 점: ",
+            "아쉬운 점: Unity 기술에 대한 첫 경험으로써 미리 공부하지 못하고 프로젝트를 시작하게 되어 완전한 구현을 하지 못했다.",
             "개선점: ",
-            "배운점: ",
+            "배운점: 새로운 기술을 익히고 구현해나가는 과정이 재밌었고, 또 처음 사용해보는 C#언어를 다루었다.",
         ],
         experienceResolvingProblem:[],
     },
@@ -150,14 +187,15 @@ const projectListData = [
             serviceContents:[],
             expectEffect:""
         },
-        startDate: "",
+        startDate: "24.11.22",
         endDate:"",
-        url: "",
+        url: "https://jjuhs-portfolio.com",
         github: "https://github.com/JJuHS/portfolio",
-        technologies:[],
+        technologies:["React", "tailwind", "JavaScript"],
         team:["정호성"],
         images: Object.values(portfolioImgStore.getState()),
         role:[],
+        myImplementation:[],
         review:[],
         experienceResolvingProblem:[],
     },

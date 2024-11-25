@@ -38,6 +38,14 @@ import cosmosAuthPasswordfind from '../Assets/projects/cosmos/passwordfind.png';
 import cosmosAuthSignup from '../Assets/projects/cosmos/signup.png';
 import cosmosAuthUserinfo from '../Assets/projects/cosmos/userinfo.png';
 import cosmosAuthUserinfochange from '../Assets/projects/cosmos/userinfochange.png';
+// Whitebox
+import whiteboxmain from '../Assets/projects/whitebox/whiteboxmain.png';
+// Bugtopia
+import bugtopiaMain from '../Assets/projects/bugtopia/bugtopiaMain.png';
+import bugtopiaInsectDetail from '../Assets/projects/bugtopia/bugtopiaInsectDetail.png';
+
+// Portfolio
+
 
 // MOVIEW
 export const moviewImgStore = create((set) => ({
@@ -84,12 +92,13 @@ export const cosmosImgStore = create((set) => ({
 
 // WhiteBox
 export const whiteboxImgStore = create((set) => ({
-
+    whiteboxmain,
 }))
 
 // Bugtopia
 export const bugtopiaImgStore = create((set) => ({
-
+    bugtopiaMain,
+    bugtopiaInsectDetail
 }))
 
 // Portfolio
