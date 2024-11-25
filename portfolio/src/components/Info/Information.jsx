@@ -18,25 +18,28 @@ function Information() {
         </div>
         
         <div className="mt-4">
-            <h2 className="text-xl font-semibold">Education</h2>
+            <h2 className="text-xl font-semibold">Education & Publishing</h2>
             <ul>
-                <li>B.Sc. in Physics - Sungkyunkwan University (2015.03 - 2023.02)</li>
-                <li>SAMSUNG SW ACADEMY FOR YOUTH (2024.01 ~ )</li>
+                <li>EXP: B.Sc. in Physics - Sungkyunkwan University (2015.03 - 2023.02)</li>
+                <li>PB: Electrical Transport Study of VO2 Based Field-Effect Transistor Prepared by Chemical Etching (2023.02 ~ )</li>
+                <li>EXP: SAMSUNG SW ACADEMY FOR YOUTH (2024.01 ~ )</li>
             </ul>
         </div>
 
         <div className="mt-4">
             <h2 className="text-xl font-semibold">Awards</h2>
             <ul>
-            <li>Common Project Excellence Award - 2024.08</li>
-            <li>Specialized Project Excellence Award - 2024.10</li>
+                <li>Common Project Excellence Award - 2024.08</li>
+                <li>Specialized Project Excellence Award - 2024.10</li>
             </ul>
         </div>
 
         <div className="mt-4">
             <h2 className="text-xl font-semibold">Certifications</h2>
             <ul>
-            <li>Engineer Information Processing (2020.11)</li>
+                <li>Information Processing Engineer (2020.11)</li>
+                <li>SQLD (2024.10)</li>
+                <li>TOEIC SPEACKING AL (2024.02)</li>
             </ul>
         </div>
 
