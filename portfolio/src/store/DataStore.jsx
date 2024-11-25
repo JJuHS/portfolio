@@ -227,17 +227,17 @@ const techStacks = [
     },
     {
         name: "JavaScript",
-        degree: 4,
+        degree: 2,
         explanation: "Proficient in using JavaScript for DOM manipulation tasks."
     },
     {
         name: "React",
-        degree: 4,
+        degree: 3,
         explanation: "Experienced in component-based architecture and state management, with extensive project experience."
     },
     {
         name: "Spring",
-        degree: 3,
+        degree: 2,
         explanation: "Capable of performing basic CRUD operations and managing authentication with Spring."
     },
     {
@@ -252,9 +252,19 @@ const techStacks = [
     },
     {
         name: "TypeScript",
-        degree: 3,
+        degree: 2,
         explanation: "Proficient in basic TypeScript usage, focusing on writing stable and secure code."
-    }
+    },
+    {
+        name: "Vue.js",
+        degree: 2,
+        explanation: "Familiar with Vue.js framework, skilled in building interactive and performant front-end applications using its reactive components and ecosystem."
+    },
+    {
+        name: "Django",
+        degree: 2,
+        explanation: "Proficient in using Django for developing robust web applications, with an emphasis on writing clean, maintainable code and utilizing Django’s ORM and class-based views."
+    },
 ];
 
 
