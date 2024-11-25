@@ -217,7 +217,7 @@ const techStacks = [
     },
     {
         name: "Java",
-        degree: 4,
+        degree: 3,
         explanation: "Adept at managing data structures and crafting advanced algorithms in Java."
     },
     {
@@ -236,13 +236,13 @@ const techStacks = [
         explanation: "Capable of performing basic CRUD operations and managing authentication with Spring."
     },
     {
-        name: "Machine Learning",
+        name: "Deep Learning",
         degree: 2,
         explanation: "Understands the basic structure of machine learning models and can adjust parameters and hyperparameters for training."
     },
     {
         name: "Unity",
-        degree: 3,
+        degree: 2,
         explanation: "Knowledgeable in creating 3D scenes and has a fundamental understanding of scripting in Unity."
     },
     {
