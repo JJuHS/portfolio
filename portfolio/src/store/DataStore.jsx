@@ -209,9 +209,54 @@ const projectTitleToIndex = {
     'portfolio':4,
 }
 
+const techStacks = [
+    {
+        name: "Python",
+        degree: 4,
+        explanation: "Skilled at manipulating data structures and implementing advanced algorithms in Python."
+    },
+    {
+        name: "Java",
+        degree: 4,
+        explanation: "Adept at managing data structures and crafting advanced algorithms in Java."
+    },
+    {
+        name: "JavaScript",
+        degree: 4,
+        explanation: "Proficient in using JavaScript for DOM manipulation tasks."
+    },
+    {
+        name: "React",
+        degree: 4,
+        explanation: "Experienced in component-based architecture and state management, with extensive project experience."
+    },
+    {
+        name: "Spring",
+        degree: 3,
+        explanation: "Capable of performing basic CRUD operations and managing authentication with Spring."
+    },
+    {
+        name: "Machine Learning",
+        degree: 2,
+        explanation: "Understands the basic structure of machine learning models and can adjust parameters and hyperparameters for training."
+    },
+    {
+        name: "Unity",
+        degree: 3,
+        explanation: "Knowledgeable in creating 3D scenes and has a fundamental understanding of scripting in Unity."
+    },
+    {
+        name: "TypeScript",
+        degree: 3,
+        explanation: "Proficient in basic TypeScript usage, focusing on writing stable and secure code."
+    }
+];
+
+
 const useDataStore = create((set) => ({
     projectList: projectListData,
-    projectTitleToIndex: projectTitleToIndex
+    projectTitleToIndex: projectTitleToIndex,
+    techStacks: techStacks,
 }))
 
 export default useDataStore;
