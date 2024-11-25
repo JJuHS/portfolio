@@ -1,6 +1,7 @@
 import { create } from 'zustand';
 import { moviewImgStore, cosmosImgStore, whiteboxImgStore, bugtopiaImgStore, portfolioImgStore } from './ImageStore.jsx';
 
+// 프로젝트
 const projectListData = [
     // 1. MOVIEW - 완료
     {
@@ -214,6 +215,7 @@ const projectTitleToIndex = {
     'portfolio':4,
 }
 
+// 기술스택
 const techStacks = [
     {
         name: "Python",

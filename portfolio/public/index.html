@@ -93,8 +93,6 @@
         }, 1);
         }
 
-        let distortion = 0; // 일그러짐 정도
-
         // 마우스 이동 -> 원 쪼개기
         const handleMouseMove = (e) => {
 
@@ -153,7 +151,7 @@
       }
 
       function generateCircles() {
-        setInterval(createRandomCircles, Math.random() * 200);
+        setInterval(createRandomCircles, Math.random() * 400);
       }
 
       function createInitialCircles() {

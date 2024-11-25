@@ -10,12 +10,16 @@ import InformationIcon from '../../Assets/static/InformationIcon.png'
 import PlayIcon from '../../Assets/static/PlayIcon.png'
 import GitHubIcon from '../../Assets/static/GitHubIcon.png'
 import TistoryIcon from '../../Assets/static/TistoryIcon.png'
+import { nationImgStore } from "../../store/ImageStore.jsx";
 
 
 function Navbar () {
     const navigate = useNavigate();
     const location = useLocation();
     const gridOneEmpty= useStyleStore((state) => state.gridOneEmpty);
+    
+    const usaIcon = nationImgStore.getState().usaIcon;
+    const krIcon = nationImgStore.getState().koreaIcon;
 
     const navbarList = [
         { name: "Home", icon:HomeImage, current: false },
@@ -27,6 +31,21 @@ function Navbar () {
         { name: "GitHub", icon:GitHubIcon, current:false, url:"https://github.com/jjuHS/portfolio/" },
         { name: "Tistory", icon:TistoryIcon, current:false, url:"https://developer-traxer.tistory.com/" },
     ]
+
+    const setLanguage = (lan) => {
+        switch (lan) {
+            case "en":
+                localStorage.setItem("language", "en");
+                window.location.reload();
+                break;
+            case "kr":
+                localStorage.setItem("language", "kr");
+                window.location.reload();
+                break;
+            default:
+                break;
+        }
+    }
 
     const handleNavItemClick = (toward) => {
         const currentPage = location.pathname
@@ -220,6 +239,10 @@ function Navbar () {
                         </div>
                     </div>
                     {gridOneEmpty()}
+                </div>
+                <div className="flex justify-end w-11/12">
+                    <img src={krIcon} alt="" className="w-8 h-8 bg-main rounded ms-2 cursor-pointer" onClick={() => setLanguage("kr")} />
+                    <img src={usaIcon} alt="" className="w-8 h-8 bg-main rounded ms-2 cursor-pointer" onClick={() => setLanguage("en")} />
                 </div>
             </div>
         </Disclosure>

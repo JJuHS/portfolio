@@ -46,6 +46,9 @@ import bugtopiaInsectDetail from '../Assets/projects/bugtopia/bugtopiaInsectDeta
 
 // Portfolio
 
+// nation Image
+import koreaIcon from '../Assets/icon/koreaIcon.png';
+import usaIcon from '../Assets/icon/usaIcon.png';
 
 // MOVIEW
 export const moviewImgStore = create((set) => ({
@@ -104,4 +107,9 @@ export const bugtopiaImgStore = create((set) => ({
 // Portfolio
 export const portfolioImgStore = create((set) => ({
 
+}))
+
+export const nationImgStore = create((set) => ({
+    koreaIcon,
+    usaIcon,
 }))
