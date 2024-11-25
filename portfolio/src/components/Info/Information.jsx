@@ -1,10 +1,13 @@
 import React from "react";
 import useDataStore from "../../store/DataStore";
 import  identificationImage from '../../Assets/identificationImage.jpg';
+import linkIcon from '../../Assets/icon/linkIcon.png';
+import { useNavigate } from 'react-router-dom';
 
 function Information() {
     const projectList = useDataStore.getState().projectList;
     const techStacks = useDataStore.getState().techStacks;
+    const navigate = useNavigate();
 
     return (
         <div className="bg-main-dark text-main-light font-regular p-8">
@@ -51,7 +54,11 @@ function Information() {
             {projectList.map((project, indexedDB) => (
                 <div key={indexedDB} className="border-b border-main-semi-light p-4">
                     <h3 className="text-lg font-semibold">{project.title}</h3>
-                    <p>{project.description.planningIntention}</p>
+                    <p className="flex">
+                        {project.description.planningIntention}&nbsp;&nbsp;&nbsp;
+                        <img src={linkIcon} onClick={() => navigate(`/projects/${project.title.toLowerCase()}`)} className="h-6 w-6 cursor-pointer"/>
+                    </p>
+                    
                 </div>
             ))}
         </div>
