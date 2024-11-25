@@ -32,7 +32,7 @@ function Information() {
                     <ul>
                         <li className="ms-4 mt-1">EXP: B.Sc. in Physics - Sungkyunkwan University (2015.03 - 2023.02)</li>
                         <li className="ms-4 mt-1">PB: Electrical Transport Study of VO2 Based Field-Effect Transistor Prepared by Chemical Etching (2023.02 ~ )</li>
-                        <li className="ms-4 mt-1">EXP: SAMSUNG SW ACADEMY FOR YOUTH (2024.01 ~ )</li>
+                        <li className="ms-4 mt-1">EXP: SAMSUNG Software ACADEMY FOR YOUTH (2024.01 ~ )</li>
                     </ul>
                 </div>
     

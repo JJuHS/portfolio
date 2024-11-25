@@ -227,6 +227,24 @@ const techStacks = [
         image: "",
     },
     {
+        name: "JavaScript",
+        degree: 4,
+        explanation: {
+            en: "Proficient in using JavaScript for DOM manipulation tasks.",
+            kr: "JavaScript를 사용하여 DOM 조작 작업을 수행할 수 있습니다.",
+        },
+        image: "",
+    },
+    {
+        name: "React",
+        degree: 4,
+        explanation: {
+            en: "Experienced in component-based architecture and state management, with extensive project experience.",
+            kr: "컴포넌트 기반 아키텍처와 상태 관리를 경험하며, 다양한 프로젝트 경험을 보유하고 있습니다.",
+        },
+        image: "",
+    },
+    {
         name: "Java",
         degree: 3,
         explanation: {
@@ -241,24 +259,6 @@ const techStacks = [
         explanation: {
             en: "Skilled in structuring and creating web page content using HTML5, with expertise in leveraging modern HTML5 features to build responsive and accessible designs.",
             kr: "HTML5를 사용하여 웹 페이지 콘텐츠를 구조화하고 작성하는 데 능숙하며, 최신 HTML5 기능을 활용하여 반응형 및 접근 가능한 디자인을 구축할 수 있습니다.",
-        },
-        image: "",
-    },
-    {
-        name: "JavaScript",
-        degree: 2,
-        explanation: {
-            en: "Proficient in using JavaScript for DOM manipulation tasks.",
-            kr: "JavaScript를 사용하여 DOM 조작 작업을 수행할 수 있습니다.",
-        },
-        image: "",
-    },
-    {
-        name: "React",
-        degree: 3,
-        explanation: {
-            en: "Experienced in component-based architecture and state management, with extensive project experience.",
-            kr: "컴포넌트 기반 아키텍처와 상태 관리를 경험하며, 다양한 프로젝트 경험을 보유하고 있습니다.",
         },
         image: "",
     },
