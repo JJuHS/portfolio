@@ -226,6 +226,11 @@ const techStacks = [
         explanation: "Adept at managing data structures and crafting advanced algorithms in Java."
     },
     {
+        name: "HTML5",
+        degree: 3,
+        explanation: "Skilled in structuring and creating web page content using HTML5, with expertise in leveraging modern HTML5 features to build responsive and accessible designs."
+    },
+    {
         name: "JavaScript",
         degree: 2,
         explanation: "Proficient in using JavaScript for DOM manipulation tasks."
