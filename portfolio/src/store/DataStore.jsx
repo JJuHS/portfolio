@@ -218,57 +218,68 @@ const techStacks = [
     {
         name: "Python",
         degree: 4,
-        explanation: "Skilled at manipulating data structures and implementing advanced algorithms in Python."
+        explanation: "Skilled at manipulating data structures and implementing advanced algorithms in Python.",
+        image: "",
     },
     {
         name: "Java",
         degree: 3,
-        explanation: "Adept at managing data structures and crafting advanced algorithms in Java."
+        explanation: "Adept at managing data structures and crafting advanced algorithms in Java.",
+        image: "",
     },
     {
         name: "HTML5",
         degree: 3,
-        explanation: "Skilled in structuring and creating web page content using HTML5, with expertise in leveraging modern HTML5 features to build responsive and accessible designs."
+        explanation: "Skilled in structuring and creating web page content using HTML5, with expertise in leveraging modern HTML5 features to build responsive and accessible designs.",
+        image: "",
     },
     {
         name: "JavaScript",
         degree: 2,
-        explanation: "Proficient in using JavaScript for DOM manipulation tasks."
+        explanation: "Proficient in using JavaScript for DOM manipulation tasks.",
+        image: "",
     },
     {
         name: "React",
         degree: 3,
-        explanation: "Experienced in component-based architecture and state management, with extensive project experience."
+        explanation: "Experienced in component-based architecture and state management, with extensive project experience.",
+        image: "",
     },
     {
         name: "Spring",
         degree: 2,
-        explanation: "Capable of performing basic CRUD operations and managing authentication with Spring."
+        explanation: "Capable of performing basic CRUD operations and managing authentication with Spring.",
+        image: "",
     },
     {
         name: "Deep Learning",
         degree: 2,
-        explanation: "Understands the basic structure of machine learning models and can adjust parameters and hyperparameters for training."
+        explanation: "Understands the basic structure of machine learning models and can adjust parameters and hyperparameters for training.",
+        image: "",
     },
     {
         name: "Unity",
         degree: 2,
-        explanation: "Knowledgeable in creating 3D scenes and has a fundamental understanding of scripting in Unity."
+        explanation: "Knowledgeable in creating 3D scenes and has a fundamental understanding of scripting in Unity.",
+        image: "",
     },
     {
         name: "TypeScript",
         degree: 2,
-        explanation: "Proficient in basic TypeScript usage, focusing on writing stable and secure code."
+        explanation: "Proficient in basic TypeScript usage, focusing on writing stable and secure code.",
+        image: "",
     },
     {
         name: "Vue.js",
         degree: 2,
-        explanation: "Familiar with Vue.js framework, skilled in building interactive and performant front-end applications using its reactive components and ecosystem."
+        explanation: "Familiar with Vue.js framework, skilled in building interactive and performant front-end applications using its reactive components and ecosystem.",
+        image: "",
     },
     {
         name: "Django",
         degree: 2,
-        explanation: "Proficient in using Django for developing robust web applications, with an emphasis on writing clean, maintainable code and utilizing Django’s ORM and class-based views."
+        explanation: "Proficient in using Django for developing robust web applications, with an emphasis on writing clean, maintainable code and utilizing Django’s ORM and class-based views.",
+        image: "",
     },
 ];
 
