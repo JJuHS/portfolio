@@ -20,7 +20,8 @@ function Information() {
         <div className="mt-4">
             <h2 className="text-xl font-semibold">Education</h2>
             <ul>
-            <li>B.Sc. in Physics - Sungkyunkwan University (2015.03 - 2023.02)</li>
+                <li>B.Sc. in Physics - Sungkyunkwan University (2015.03 - 2023.02)</li>
+                <li>SAMSUNG SW ACADEMY FOR YOUTH (2024.01 ~ )</li>
             </ul>
         </div>
 
