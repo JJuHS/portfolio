@@ -220,70 +220,104 @@ const techStacks = [
     {
         name: "Python",
         degree: 4,
-        explanation: "Skilled at manipulating data structures and implementing advanced algorithms in Python.",
+        explanation: {
+            en: "Skilled at manipulating data structures and implementing advanced algorithms in Python.",
+            kr: "파이썬의 자료구조를 자유롭게 사용할 수 있고, 고급 수준의 알고리즘을 구현할 수 있습니다.",
+        },
         image: "",
     },
     {
         name: "Java",
         degree: 3,
-        explanation: "Adept at managing data structures and crafting advanced algorithms in Java.",
+        explanation: {
+            en: "Adept at managing data structures and crafting advanced algorithms in Java.",
+            kr: "자바에서 자료구조를 다룰 수 있으며 고급 알고리즘을 작성할 수 있습니다.",
+        },
         image: "",
     },
     {
         name: "HTML5",
         degree: 3,
-        explanation: "Skilled in structuring and creating web page content using HTML5, with expertise in leveraging modern HTML5 features to build responsive and accessible designs.",
+        explanation: {
+            en: "Skilled in structuring and creating web page content using HTML5, with expertise in leveraging modern HTML5 features to build responsive and accessible designs.",
+            kr: "HTML5를 사용하여 웹 페이지 콘텐츠를 구조화하고 작성하는 데 능숙하며, 최신 HTML5 기능을 활용하여 반응형 및 접근 가능한 디자인을 구축할 수 있습니다.",
+        },
         image: "",
     },
     {
         name: "JavaScript",
         degree: 2,
-        explanation: "Proficient in using JavaScript for DOM manipulation tasks.",
+        explanation: {
+            en: "Proficient in using JavaScript for DOM manipulation tasks.",
+            kr: "JavaScript를 사용하여 DOM 조작 작업을 수행할 수 있습니다.",
+        },
         image: "",
     },
     {
         name: "React",
         degree: 3,
-        explanation: "Experienced in component-based architecture and state management, with extensive project experience.",
+        explanation: {
+            en: "Experienced in component-based architecture and state management, with extensive project experience.",
+            kr: "컴포넌트 기반 아키텍처와 상태 관리를 경험하며, 다양한 프로젝트 경험을 보유하고 있습니다.",
+        },
         image: "",
     },
     {
         name: "Spring",
         degree: 2,
-        explanation: "Capable of performing basic CRUD operations and managing authentication with Spring.",
+        explanation: {
+            en: "Capable of performing basic CRUD operations and managing authentication with Spring.",
+            kr: "Spring을 사용하여 기본 CRUD 작업을 수행하고 인증 관리를 할 수 있습니다.",
+        },
         image: "",
     },
     {
         name: "Deep Learning",
         degree: 2,
-        explanation: "Understands the basic structure of machine learning models and can adjust parameters and hyperparameters for training.",
+        explanation: {
+            en: "Understands the basic structure of machine learning models and can adjust parameters and hyperparameters for training.",
+            kr: "기계 학습 모델의 기본 구조를 이해하고 매개변수와 하이퍼파라미터를 조정하여 훈련을 수행할 수 있습니다.",
+        },
         image: "",
     },
     {
         name: "Unity",
         degree: 2,
-        explanation: "Knowledgeable in creating 3D scenes and has a fundamental understanding of scripting in Unity.",
+        explanation: {
+            en: "Knowledgeable in creating 3D scenes and has a fundamental understanding of scripting in Unity.",
+            kr: "3D 씬을 제작하는 데 익숙하며 Unity에서 스크립팅에 대한 기본적인 이해를 가지고 있습니다.",
+        },
         image: "",
     },
     {
         name: "TypeScript",
         degree: 2,
-        explanation: "Proficient in basic TypeScript usage, focusing on writing stable and secure code.",
+        explanation: {
+            en: "Proficient in basic TypeScript usage, focusing on writing stable and secure code.",
+            kr: "기본적인 TypeScript 사용에 능숙하며, 안정적이고 안전한 코드를 작성하는 데 중점을 둡니다.",
+        },
         image: "",
     },
     {
         name: "Vue.js",
         degree: 2,
-        explanation: "Familiar with Vue.js framework, skilled in building interactive and performant front-end applications using its reactive components and ecosystem.",
+        explanation: {
+            en: "Familiar with Vue.js framework, skilled in building interactive and performant front-end applications using its reactive components and ecosystem.",
+            kr: "Vue.js 프레임워크에 익숙하며, 반응형 컴포넌트와 생태계를 활용하여 인터랙티브하고 성능이 뛰어난 프론트엔드 애플리케이션을 구축할 수 있습니다.",
+        },
         image: "",
     },
     {
         name: "Django",
         degree: 2,
-        explanation: "Proficient in using Django for developing robust web applications, with an emphasis on writing clean, maintainable code and utilizing Django’s ORM and class-based views.",
+        explanation: {
+            en: "Proficient in using Django for developing robust web applications, with an emphasis on writing clean, maintainable code and utilizing Django’s ORM and class-based views.",
+            kr: "Django를 사용하여 견고한 웹 애플리케이션을 개발할 수 있으며, 깨끗하고 유지보수 가능한 코드를 작성하고 Django의 ORM과 클래스 기반 뷰를 활용할 수 있습니다.",
+        },
         image: "",
     },
 ];
+
 
 
 const useDataStore = create((set) => ({

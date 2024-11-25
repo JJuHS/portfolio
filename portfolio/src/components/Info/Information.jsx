@@ -59,7 +59,7 @@ function Information() {
                         {techStacks.map((tech, index) => (
                             <li className="ms-4 mt-2 mb-2 flex flex-col">
                                 <span><strong className="text-main-semi-light">{tech.name}</strong> {'★'.repeat(tech.degree) + '☆'.repeat(5 - tech.degree)}</span>
-                                <span className="mt-1 ms-4">{tech.explanation}</span>
+                                <span className="mt-1 ms-4">{tech.explanation.en}</span>
                             </li>
                         ))}
                     </ul>
@@ -112,7 +112,7 @@ function Information() {
                     <h2 className="text-2xl mb-2 font-semibold text-main">수상 내역</h2>
                     <ul>
                         <li className="ms-4 mt-1">공통 프로젝트 우수상 - 2024.08</li>
-                        <li className="ms-4 mt-1">전문화 프로젝트 우수상 - 2024.10</li>
+                        <li className="ms-4 mt-1">특화 프로젝트 우수상 - 2024.10</li>
                     </ul>
                 </div>
     
@@ -121,7 +121,7 @@ function Information() {
                     <ul>
                         <li className="ms-4 mt-1">정보처리기사 (2020.11)</li>
                         <li className="ms-4 mt-1">SQLD (2024.10)</li>
-                        <li className="ms-4 mt-1">TOEIC SPEAKING AL (2024.02)</li>
+                        <li className="ms-4 mt-1">토익스피킹 AL (2024.02)</li>
                     </ul>
                 </div>
     
@@ -131,7 +131,7 @@ function Information() {
                         {techStacks.map((tech, index) => (
                             <li key={index} className="ms-4 mt-2 mb-2 flex flex-col">
                                 <span><strong className="text-main-semi-light">{tech.name}</strong> {'★'.repeat(tech.degree) + '☆'.repeat(5 - tech.degree)}</span>
-                                <span className="mt-1 ms-4">{tech.explanation}</span>
+                                <span className="mt-1 ms-4">{tech.explanation.kr}</span>
                             </li>
                         ))}
                     </ul>
