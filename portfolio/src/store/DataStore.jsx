@@ -665,7 +665,7 @@ const informationData = {
             etc: ""
         }
     ],
-    Certifiactions: [
+    Certifications: [
         {
             name: {
                 en: "Information Processing Engineer",

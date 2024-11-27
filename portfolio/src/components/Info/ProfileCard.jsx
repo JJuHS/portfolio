@@ -4,7 +4,7 @@ import TistoryIcon from '../../Assets/static/TistoryIcon.png';
 
 function ProfileCard ({ language, profileData }) {
     return (
-        <div className="flex flex-row justify-center items-center">
+        <div className="flex flex-row justify-center items-center" id="profile">
             <div className="flex flex-col items-center justify-center w-1/5">
                 <img src={profileData.img} alt="Jung Ho Sung" className="w-40 h-40 rounded-full mb-4 border-4 border-main-semi-light"/>
                 <h1 className="text-2xl font-bold">{profileData.name[language]}</h1>
