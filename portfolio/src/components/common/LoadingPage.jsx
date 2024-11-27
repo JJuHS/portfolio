@@ -5,8 +5,10 @@ import Footprints from "./Footprints.jsx";
 function LoadingPage () {
     const language = localStorage.getItem("language") || 'en';
     const loadingMessage = { 'en': "Loading.....", 'kr': "로딩 중....."};
-    const footprintImg = footprintStore.getState().footprint
-
+    const leftFootprintImg = footprintStore.getState().leftFootprint
+    const rightFootprintImg = footprintStore.getState().rightFootprint
+    
+    
     const maxFootprints = 10;
     const allowedArea = {
         x: 0,
@@ -20,7 +22,8 @@ function LoadingPage () {
             <div className="h-[100vh] overflow-hidden" >
                 {/* 발자국 */}
                 <Footprints 
-                    footprintImg={footprintImg}
+                    leftFootprintImg={leftFootprintImg}
+                    rightFootprintImg={rightFootprintImg}
                     allowedArea={allowedArea}
                     maxFootprints={maxFootprints}
                 />

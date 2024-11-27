@@ -73,6 +73,8 @@ import koreaIcon from '../Assets/icon/koreaIcon.png';
 import usaIcon from '../Assets/icon/usaIcon.png';
 // footprint for loading
 import footprint from '../Assets/static/footprint.png';
+import leftFootprint from '../Assets/static/leftFootprint.png';
+import rightFootprint from '../Assets/static/rightFootprint.png';
 
 // MOVIEW
 export const moviewImgStore = create((set) => ({
@@ -146,6 +148,8 @@ export const nationImgStore = create((set) => ({
 // 로딩 이미지 발자국
 export const footprintStore = create((set) => ({
     footprint,
+    leftFootprint,
+    rightFootprint
 }))
 
 // 기술스택 아이콘
