@@ -10,7 +10,7 @@ function ProfileCard ({ language, profileData }) {
                 <h1 className="text-2xl font-bold">{profileData.name[language]}</h1>
                 <p className="text-main-semi-light">{profileData.shortDescription[language]} </p>
             </div>
-            <div className="flex flex-col w-1/5">
+            <div className="flex flex-col w-2/3 sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5">
                 <span className="flex flex-row justify-between text-main-light m-2">
                     <span>EMAIL</span>
                     {profileData.contact.email}

@@ -1,0 +1,19 @@
+/* 기술 카드 커졌을 때 스크롤 가능 */
+.skill-card-planning-intention:hover {
+    overflow-y: auto;
+}
+
+.skill-card-planning-intention::-webkit-scrollbar {
+    width: 4px;
+}
+
+.skill-card-planning-intention::-webkit-scrollbar-track {
+    background: var(--main-dark); 
+}
+
+.skill-card-planning-intention::-webkit-scrollbar-thumb {
+    background: var(--main-semi-light); 
+}
+.skill-card-planning-intention::-webkit-scrollbar-thumb:hover {
+    background: var(--main);
+}

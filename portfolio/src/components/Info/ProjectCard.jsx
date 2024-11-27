@@ -3,6 +3,7 @@ import linkIcon from '../../Assets/icon/linkIcon.png';
 import GitHubIcon from '../../Assets/static/GitHubIcon.png';
 import { useNavigate } from "react-router-dom";
 import useStyleStore from "../../store/StyleStore";
+import "../../styles/projects/ProjectCardCss.css"
 
 function ProjectCard ({ project, id }) {
     const language = localStorage.getItem('language');
@@ -21,12 +22,13 @@ function ProjectCard ({ project, id }) {
                         <strong>{project.title}</strong>
                     </span>
                 </div>
-                <div className="h-32 overflow-hidden">
+                <div className="h-24 xl:h-32 overflow-hidden">
                     <img src={project.images[0]} alt="" onClick={() => navigate(`/projects/${project.title.toLowerCase()}`)}/>
                 </div>
                 <div className="flex flex-col items-center">
+                    {/* 프로젝트 카드 커졌을 때 스크롤 가능 : project-card-planning-intention*/}
                     <div
-                        className="h-12 mt-1 ms-4 me-4 mb-0 text-sm overflow-hidden text-ellipsis break-all"
+                        className="project-card-planning-intention h-20 xl:h-12 mt-1 ms-3 me-3 mb-0 text-sm hover:overflow-y-auto overflow-hidden text-ellipsis break-all"
                         title={project.description.planningIntention[language]}
                     >
                         {project.description.planningIntention[language]}

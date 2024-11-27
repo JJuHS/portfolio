@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import { moviewImgStore, cosmosImgStore, whiteboxImgStore, bugtopiaImgStore, portfolioImgStore } from './ImageStore.jsx';
+import { moviewImgStore, cosmosImgStore, whiteboxImgStore, bugtopiaImgStore, portfolioImgStore, skillIconStore } from './ImageStore.jsx';
 import  identificationImage from '../Assets/identificationImage.jpg';
 // 프로젝트
 const projectListData = [
@@ -458,7 +458,7 @@ const techStacks = [
             en: "Skilled at manipulating data structures and implementing advanced algorithms in Python.",
             kr: "파이썬의 자료구조를 자유롭게 사용할 수 있고, 고급 수준의 알고리즘을 구현할 수 있습니다.",
         },
-        image: "",
+        icon: skillIconStore.getState().PythonIcon,
     },
     {
         name: "JavaScript",
@@ -467,7 +467,7 @@ const techStacks = [
             en: "Proficient in using JavaScript for DOM manipulation tasks.",
             kr: "JavaScript를 사용하여 DOM 조작 작업을 수행할 수 있습니다.",
         },
-        image: "",
+        icon: skillIconStore.getState().JavascriptIcon,
     },
     {
         name: "React",
@@ -476,7 +476,7 @@ const techStacks = [
             en: "Experienced in component-based architecture and state management, with extensive project experience.",
             kr: "컴포넌트 기반 아키텍처와 상태 관리를 경험하며, 다양한 프로젝트 경험을 보유하고 있습니다.",
         },
-        image: "",
+        icon: skillIconStore.getState().ReactIcon,
     },
     {
         name: "Java",
@@ -485,7 +485,7 @@ const techStacks = [
             en: "Adept at managing data structures and crafting advanced algorithms in Java.",
             kr: "자바에서 자료구조를 다룰 수 있으며 고급 알고리즘을 작성할 수 있습니다.",
         },
-        image: "",
+        icon: skillIconStore.getState().JavaIcon,
     },
     {
         name: "HTML5",
@@ -494,7 +494,7 @@ const techStacks = [
             en: "Skilled in structuring and creating web page content using HTML5, with expertise in leveraging modern HTML5 features to build responsive and accessible designs.",
             kr: "HTML5를 사용하여 웹 페이지 콘텐츠를 구조화하고 작성하는 데 능숙하며, 최신 HTML5 기능을 활용하여 반응형 및 접근 가능한 디자인을 구축할 수 있습니다.",
         },
-        image: "",
+        icon: skillIconStore.getState().Html5Icon,
     },
     {
         name: "SpringBoot",
@@ -503,16 +503,7 @@ const techStacks = [
             en: "Capable of performing basic CRUD operations and managing authentication with Spring.",
             kr: "SpringBoot를 사용하여 기본 CRUD 작업을 수행하고 인증 관리를 할 수 있습니다.",
         },
-        image: "",
-    },
-    {
-        name: "Deep Learning",
-        degree: 2,
-        explanation: {
-            en: "Understands the basic structure of machine learning models and can adjust parameters and hyperparameters for training.",
-            kr: "기계 학습 모델의 기본 구조를 이해하고 매개변수와 하이퍼파라미터를 조정하여 훈련을 수행할 수 있습니다.",
-        },
-        image: "",
+        icon: skillIconStore.getState().SpringBootIcon,
     },
     {
         name: "Unity",
@@ -521,7 +512,7 @@ const techStacks = [
             en: "Knowledgeable in creating 3D scenes and has a fundamental understanding of scripting in Unity.",
             kr: "3D 씬을 제작하는 데 익숙하며 Unity에서 스크립팅에 대한 기본적인 이해를 가지고 있습니다.",
         },
-        image: "",
+        icon: skillIconStore.getState().UnityIcon,
     },
     {
         name: "TypeScript",
@@ -530,7 +521,7 @@ const techStacks = [
             en: "Proficient in basic TypeScript usage, focusing on writing stable and secure code.",
             kr: "기본적인 TypeScript 사용에 능숙하며, 안정적이고 안전한 코드를 작성하는 데 중점을 둡니다.",
         },
-        image: "",
+        icon: skillIconStore.getState().TypeScriptIcon,
     },
     {
         name: "Vue.js",
@@ -539,7 +530,7 @@ const techStacks = [
             en: "Familiar with Vue.js framework, skilled in building interactive and performant front-end applications using its reactive components and ecosystem.",
             kr: "Vue.js 프레임워크에 익숙하며, 반응형 컴포넌트와 생태계를 활용하여 인터랙티브하고 성능이 뛰어난 프론트엔드 애플리케이션을 구축할 수 있습니다.",
         },
-        image: "",
+        icon: skillIconStore.getState().VueIcon,
     },
     {
         name: "Django",
@@ -548,7 +539,16 @@ const techStacks = [
             en: "Proficient in using Django for developing robust web applications, with an emphasis on writing clean, maintainable code and utilizing Django’s ORM and class-based views.",
             kr: "Django를 사용하여 견고한 웹 애플리케이션을 개발할 수 있으며, 깨끗하고 유지보수 가능한 코드를 작성하고 Django의 ORM과 클래스 기반 뷰를 활용할 수 있습니다.",
         },
-        image: "",
+        icon: skillIconStore.getState().DjangoIcon,
+    },
+    {
+        name: "Deep Learning",
+        degree: 2,
+        explanation: {
+            en: "Understands the basic structure of machine learning models and can adjust parameters and hyperparameters for training.",
+            kr: "기계 학습 모델의 기본 구조를 이해하고 매개변수와 하이퍼파라미터를 조정하여 훈련을 수행할 수 있습니다.",
+        },
+        icon: null,
     },
 ];
 
@@ -562,7 +562,7 @@ const coworkStacks = [
             en: "Experienced in managing branches, issues, and project workflows. Proficient in utilizing GitHub Actions for automated deployment and security management to safely store and handle sensitive data.",
             kr: "브랜치, 이슈, 프로젝트 관리에 대한 경험이 있으며, Actions를 활용한 자동 베포 및 Security 관리를 통해 위험 데이터를 안전하게 보관 및 이용할 수 있습니다.",
         },
-        image: "",
+        icon: skillIconStore.getState().GithubIcon,
     },
     {
         name: "Jira",
@@ -571,7 +571,7 @@ const coworkStacks = [
             en: "Skilled in managing agile workflows such as Scrum and Kanban, including sprint planning, backlog refinement, and task tracking for effective team collaboration.",
             kr: "스크럼 및 칸반과 같은 애자일 워크플로우를 관리하며, 스프린트 계획, 백로그 정리, 작업 추적 등을 통해 팀 협업을 효과적으로 진행한 경험이 있습니다.",
         },
-        image: "",
+        icon: skillIconStore.getState().JiraIcon,
     },
     {
         name: "Figma",
@@ -580,7 +580,7 @@ const coworkStacks = [
             en: "Limited experience; basic knowledge of interface inspection and commenting for design feedback.",
             kr: "제한적인 경험으로, 인터페이스 점검 및 디자인 피드백을 위한 코멘트 작성 및 목업용 화면 제작 같은 기본적인 활용에 익숙합니다.",
         },
-        image: "",
+        icon: skillIconStore.getState().FigmaIcon,
     },
     {
         name: "Notion",
@@ -589,7 +589,7 @@ const coworkStacks = [
             en: "Proficient in using Notion for documentation, task management, and team collaboration, including creating dashboards and workflow templates.",
             kr: "문서화, 작업 관리 및 팀 협업을 위해 Notion을 활용하며, 대시보드 및 워크플로우 템플릿 생성에 능숙합니다.",
         },
-        image: "",
+        icon: skillIconStore.getState().NotionIcon,
     },
 ];
 

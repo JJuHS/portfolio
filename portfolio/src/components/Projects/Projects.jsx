@@ -6,6 +6,7 @@ import useDataStore from '../../store/DataStore.jsx';
 
 function Projects () {
     const navigate = useNavigate();
+    const language = localStorage.getItem('language') || 'en';
     const gridOneEmpty = useStyleStore((state) => state.gridOneEmpty);
     const fetchedProjectList = useDataStore().projectList;
     const [ projectList, setProjectList ] = useState(fetchedProjectList)
@@ -58,6 +59,24 @@ function Projects () {
         });
     };
 
+    const renderPageTitle = () => {
+        const data = {
+            en: ['My', 'Project', 'Works', 'Here are some of the works I created through the project.'],
+            kr: ['내', '프로젝트', '모음', '다음은 제가 프로젝트를 통해 만든 작품들 입니다.'],
+        }
+        return (
+            <div className="h-44 w-full flex flex-col items-center justify-center">      
+                <span className="text-main-light text-3xl font-bold">
+                    {data[language][0]}
+                    <span className="text-main"> {data[language][1]} </span>
+                    {data[language][2]}
+                </span>
+                <span className="text-white italic mt-2 text-sm">
+                    {data[language][3]}
+                </span>
+            </div>
+        )
+    }
     const renderProject = (project, sizeClass) => {
         if (!project.completeDataCreation) return null;
         const sizeClassDict = {
@@ -65,7 +84,7 @@ function Projects () {
             4: "col-span-4 w-full border text-main font-semibold h-60 p-3 m-3",
             6: "col-span-6 w-full border text-main font-semibold h-60 p-3 m-3",
         }
-        
+
         return (
             <div className={sizeClassDict[sizeClass]} >
                 <div 
@@ -97,16 +116,7 @@ function Projects () {
 
     return (
         <div>
-            <div className="h-44 w-full flex flex-col items-center justify-center">      
-                <span className="text-main-light text-3xl font-bold">
-                    My  
-                    <span className="text-main"> Project </span>
-                    Works
-                </span>
-                <span className="text-white italic mt-2 text-sm">
-                    Here are some of the works I created through the project.
-                </span>
-            </div>
+            {renderPageTitle()}
             {/* size ~ md 12: 3 6 3*/}
             <div className="grid grid-cols-12 md:hidden">
                 {projectList.map((project, index) => (

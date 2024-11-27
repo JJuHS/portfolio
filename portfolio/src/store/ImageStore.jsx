@@ -1,5 +1,8 @@
 import React from "react";
 import { create } from "zustand";
+// ----------------------------------
+// 이미지 import 구역
+// ----------------------------------
 
 // MOVIEW
 import moviewHomeDescription from '../Assets/projects/moview/home/description.png';
@@ -44,11 +47,32 @@ import whiteboxmain from '../Assets/projects/whitebox/whiteboxmain.png';
 import bugtopiaMain from '../Assets/projects/bugtopia/bugtopiaMain.png';
 import bugtopiaInsectDetail from '../Assets/projects/bugtopia/bugtopiaInsectDetail.png';
 
-// Portfolio
+// Portfolio TODO: 이미지 넣자
+
+// skill icons
+// 1. 기술스택
+import DjangoIcon from '../Assets/stacks/DjangoIcon.ico';
+import Html5Icon from '../Assets/stacks/Html5Icon.ico';
+import JavaIcon from '../Assets/stacks/JavaIcon.ico';
+import ReactIcon from '../Assets/stacks/ReactIcon.ico';
+import SpringBootIcon from '../Assets/stacks/SpringBootIcon.ico';
+import TypeScriptIcon from '../Assets/stacks/TypeScriptIcon.ico';
+import UnityIcon from '../Assets/stacks/UnityIcon.ico';
+import VueIcon from '../Assets/stacks/VueIcon.ico';
+import PythonIcon from '../Assets/stacks/PythonIcon.ico';
+import JavascriptIcon from '../Assets/stacks/JavascriptIcon.ico';
+// 2. 협업
+import NotionIcon from '../Assets/stacks/NotionIcon.png';
+import FigmaIcon from '../Assets/stacks/FigmaIcon.png';
+import GithubIcon from '../Assets/stacks/GithubIcon.png';
+import JiraIcon from '../Assets/stacks/JiraIcon.png';
+
 
 // nation Image
 import koreaIcon from '../Assets/icon/koreaIcon.png';
 import usaIcon from '../Assets/icon/usaIcon.png';
+// footprint for loading
+import footprint from '../Assets/static/footprint.png';
 
 // MOVIEW
 export const moviewImgStore = create((set) => ({
@@ -93,6 +117,10 @@ export const cosmosImgStore = create((set) => ({
     cosmosAuthUserinfochange,
 }))
 
+// ----------------------------------
+// export 구역
+// ----------------------------------
+
 // WhiteBox
 export const whiteboxImgStore = create((set) => ({
     whiteboxmain,
@@ -109,7 +137,31 @@ export const portfolioImgStore = create((set) => ({
 
 }))
 
+// 언어 변경용
 export const nationImgStore = create((set) => ({
     koreaIcon,
     usaIcon,
+}))
+
+// 로딩 이미지 발자국
+export const footprintStore = create((set) => ({
+    footprint,
+}))
+
+// 기술스택 아이콘
+export const skillIconStore = create((set) => ({
+    DjangoIcon,
+    Html5Icon,
+    JavaIcon,
+    ReactIcon,
+    SpringBootIcon,
+    TypeScriptIcon,
+    UnityIcon,
+    VueIcon,
+    PythonIcon,
+    JavascriptIcon,
+    NotionIcon,
+    FigmaIcon,
+    GithubIcon,
+    JiraIcon
 }))
