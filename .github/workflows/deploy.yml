@@ -20,11 +20,10 @@ jobs:
 
     - name: Deploy to Server
       run: |
-        ssh -o StrictHostKeyChecking=no ubuntu@3.35.51.121 << 'EOF'
+        ssh -o StrictHostKeyChecking=no ubuntu@13.209.11.202 << 'EOF'
         cd /home/ubuntu/git/portfolio/portfolio/
         git pull origin master
         npm install
-        export NODE_OPTIONS=--max-old-space-size=4096
         npm run build
         sudo cp -r build/* /var/www/html
         sudo systemctl restart nginx
