@@ -24,6 +24,7 @@ jobs:
         cd /home/ubuntu/git/portfolio/portfolio/
         git pull origin master
         npm install
+        export NODE_OPTIONS=--max-old-space-size=4096
         npm run build
         sudo cp -r build/* /var/www/html
         sudo systemctl restart nginx
