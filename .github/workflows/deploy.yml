@@ -21,6 +21,8 @@ jobs:
     - name: Deploy to Server
       run: |
         ssh -o StrictHostKeyChecking=no ubuntu@13.209.11.202 << 'EOF'
+        sudo apt update
+        sudo apt install -y nginx
         cd /home/ubuntu/git/portfolio/portfolio/
         git pull origin master
         npm install
