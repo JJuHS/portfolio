@@ -1,0 +1,29 @@
+.navbar-item-hover {
+    transition: all 0.2s ease-in-out;
+}
+
+.navbar-item-hover:hover {
+    background-color: var(--main-semi-light);
+    color: black;
+    animation: nav-hover-border-repeat 1s infinite;
+}
+
+@keyframes nav-hover-border-repeat {
+    0% {
+        border-radius: 1rem;
+    }
+    50% {
+        border-radius: 0.25rem;
+    }
+    100% {
+        border-radius: 1rem;
+    }
+}
+
+.nav-item-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    max-width: 1.5rem;
+    max-height: 1.5rem;
+}
+

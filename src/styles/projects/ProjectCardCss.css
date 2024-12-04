@@ -1,0 +1,19 @@
+/* 프로젝트 카드 커졌을 때 스크롤 가능 */
+.project-card-planning-intention:hover {
+    overflow-y: auto;
+}
+
+.project-card-planning-intention::-webkit-scrollbar {
+    width: 4px;
+}
+
+.project-card-planning-intention::-webkit-scrollbar-track {
+    background: var(--main-dark); 
+}
+
+.project-card-planning-intention::-webkit-scrollbar-thumb {
+    background: var(--main-semi-light); 
+}
+.project-card-planning-intention::-webkit-scrollbar-thumb:hover {
+    background: var(--main);
+}

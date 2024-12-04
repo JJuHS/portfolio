@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'PaperlogyFont-Regular';
+    src: url('./Assets/fonts/Paperlogy-5Medium.woff2') format('woff2');
+    src: url('./Assets/fonts/Paperlogy-5Medium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'PaperlogyFont-Semibold';
+    src: url('./Assets/fonts/Paperlogy-6SemiBold.woff2') format('woff2');
+    src: url('./Assets/fonts/Paperlogy-6SemiBold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'PaperlogyFont-Bold';
+    src: url('./Assets/fonts/Paperlogy-7Bold.woff2') format('woff2');
+    src: url('./Assets/fonts/Paperlogy-7Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    font-family: 'PaperlogyFont-Regular', sans-serif;
+}

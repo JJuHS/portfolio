@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ko-kr">
+  <head>
+    <!-- encoding -->
+    <meta charset="utf-8" />  
+    
+    <!-- setting view -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />  
+    
+    <!-- setting theme color -->
+    <meta name="theme-color" content="#000000" /> 
+    
+    <!-- site description -->
+    <meta
+      name="description"
+      content="JungHoSung Portfolio"
+    />  
+
+    <!-- setting favicon -->
+    <link rel="icon" sizes="16x16" href="/favicon/favicon-16x16.png" />
+    <link rel="icon" sizes="32x32" href="/favicon/favicon-32x32.png" />
+    <link rel="icon" sizes="48x48" href="/favicon/favicon-48x48.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+    
+    <!-- site title -->
+    <title>JHS Portfolio</title>
+
+    <!-- setting background style -->
+    <style>
+      body {
+        background-color: #121E58;
+        overflow: hidden;
+        margin: 0;
+      }
+      backgroundAnimation {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+      }
+      .circle {
+        position: absolute;
+        border-radius: 50%;
+        opacity: 0.3;
+        pointer-events: all;
+        z-index: 0;
+      }
+      #root {
+        position: relative;
+        overflow: auto !important;
+        height: 100vh;
+      }
+    </style>
+  </head>
+  <body>
+    <backgroundAnimation />
+    <div id="root"></div>
+    <script>
+      const colors = ['#FFFFFF', '#D7FDFC', '#9FE4EA', '#388ED8'];
+
+      function createRandomCircles({ 
+          size = Math.random() * 100 + 20, 
+          left = Math.random() * window.innerWidth, 
+          top = Math.random() * window.innerHeight, 
+          dx = (Math.random() - 0.5) * 2, 
+          dy = (Math.random() - 0.5) * 2,
+          delay =  3 + Math.random() * 7,
+          isLittle = false,
+        } = {}) {
+        // 원(5px)이 너무 작거나 지속시간(0.2s)이 너무 작으면 생성안함
+        if (size <= 5 || delay <= 0.2) return;
+        const circle = document.createElement("div");
+
+        const color = colors[Math.floor(Math.random() * colors.length)];
+        
+        const transformToward = isLittle ? 0 : 1;
+
+        circle.classList.add('circle');
+        circle.style.width = `${size}px`;
+        circle.style.height = `${size}px`;
+        circle.style.left = `${left}px`;
+        circle.style.top = `${top}px`;
+        circle.style.animationDelay = `${delay}s`;
+        circle.style.backgroundColor = color;
+        circle.style.transition = `transform ${delay}s ease, opacity ${delay}s ease, background-color ${delay}s ease`;
+        circle.style.transform = `scale(${transformToward}) translate(${dx * 100}px, ${dy * 100}px)`;
+        
+        if (isLittle) {
+          setTimeout(() => {
+          circle.style.transform = `scale(1) translate(${dx * 100}px, ${dy * 100}px)`;
+        }, 1);
+        }
+
+        // 마우스 이동 -> 원 쪼개기
+        const handleMouseMove = (e) => {
+
+          const rect = circle.getBoundingClientRect();
+          const centerX = rect.left + rect.width / 2;
+          const centerY = rect.top + rect.height / 2;
+          const mouseX = e.clientX;
+          const mouseY = e.clientY;
+
+          const distX = mouseX - centerX;
+          const distY = mouseY - centerY;
+          const distance = Math.sqrt(dx ** 2 + dy ** 2);
+
+          if (distance < rect.width / 2) {
+              for (let i = 0; i < 12; i++) {
+                const angle = (Math.PI / 6) * i
+                const dxx = Math.cos(angle);
+                const dyy = Math.sin(angle);
+
+                createRandomCircles({
+                  size: rect.width / 4,
+                  left: centerX,
+                  top: centerY,
+                  dx: dxx * 4,
+                  dy: dyy * 4,
+                  delay: delay / 2,
+                  isLittle: true,
+                })
+              }
+              circle.remove();
+          }
+        }
+
+        // 이벤트 등록
+        circle.addEventListener("mousemove", handleMouseMove);
+        circle.addEventListener("mouseover", handleMouseMove);
+        circle.addEventListener("mouseenter", handleMouseMove);
+        
+        document.querySelector('backgroundAnimation').appendChild(circle);
+        
+        setTimeout(() => {
+          circle.style.transform = `scale(0) translate(${dx * 100}px, ${dy * 100}px)`;
+        }, 0);
+
+        const checkOutOfBounds = setInterval(() => {
+          const rect = circle.getBoundingClientRect();
+          if (rect.top > window.innerHeight || rect.left > window.innerWidth || rect.bottom < 0 || rect.right < 0) {
+            clearInterval(checkOutOfBounds);
+            circle.remove();
+          }
+        })
+
+        setTimeout(() => {
+          circle.remove();
+        }, delay * 1000);
+      }
+
+      function generateCircles() {
+        setInterval(createRandomCircles, Math.random() * 400);
+      }
+
+      function createInitialCircles() {
+        for (let i = 0; i < 10; i++) {
+          createRandomCircles();
+        }
+        setTimeout(() => {
+        }, 1000);
+        for (let i = 0; i < 10; i++) {
+          createRandomCircles();
+        }
+      }
+
+      window.onload = function() {
+        createInitialCircles();
+        generateCircles();
+      }
+    </script>
+  </body>
+</html>
