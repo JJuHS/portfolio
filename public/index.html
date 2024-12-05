@@ -32,7 +32,7 @@
         overflow: hidden;
         margin: 0;
       }
-      backgroundAnimation {
+      backgroundanimation {
         position: fixed;
         top: 0;
         left: 0;
@@ -55,7 +55,7 @@
     </style>
   </head>
   <body>
-    <backgroundAnimation />
+    <backgroundanimation />
     <div id="root"></div>
     <script>
       const colors = ['#FFFFFF', '#D7FDFC', '#9FE4EA', '#388ED8'];
@@ -131,7 +131,7 @@
         circle.addEventListener("mouseover", handleMouseMove);
         circle.addEventListener("mouseenter", handleMouseMove);
         
-        document.querySelector('backgroundAnimation').appendChild(circle);
+        document.querySelector('backgroundanimation').appendChild(circle);
         
         setTimeout(() => {
           circle.style.transform = `scale(0) translate(${dx * 100}px, ${dy * 100}px)`;
