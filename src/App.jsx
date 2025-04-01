@@ -25,6 +25,7 @@ function App() {
             </Routes>
           </Suspense>
         </div>
+        <div className="h-16"></div>
       <Footer />
     </Router>
   );
