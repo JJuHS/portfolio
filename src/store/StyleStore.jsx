@@ -16,7 +16,24 @@ const gridOneEmpty = ({
     mh="auto", 
     mw="auto" } = {}) => {
     return (
-        <div className="col-span-1"></div>
+        <div 
+            className="col-span-1"
+            style={{
+                marginLeft: ms,
+                marginRight: me,
+                marginTop: mt,
+                marginBottom: mb,
+                paddingLeft: ps,
+                paddingRight: pe,
+                paddingTop: pt,
+                paddingBottom: pb,
+                backgroundColor: bgc,
+                height: h,
+                width: w,
+                maxHeight: mh,
+                maxWidth: mw
+            }}
+        ></div>
     )
 }
 

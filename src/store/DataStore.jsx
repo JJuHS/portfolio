@@ -643,7 +643,7 @@ const informationData = {
                 en: "SAMSUNG SOFTWARE ACADEMY FOR YOUTH",
                 kr: "삼성 청년 SW 아카데미"
             },
-            date: "2024.01 ~ ",
+            date: "2024.01 ~ 2024.12",
             etc: ""
         }
     ],
