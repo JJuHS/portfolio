@@ -2,11 +2,23 @@ import React from "react";
 import { Route, Routes } from 'react-router-dom';
 import Play from '../components/Play/Play.jsx';
 
+function Paint() {
+    return (
+        <div className="w-screen h-screen overflow-hidden flex flex-row">
+            <div className="w-1/5"></div>
+            <iframe 
+            src="/for_html/paint/paint.html" 
+            className="w-3/5 rounded block"
+            />
+        </div>
+    )
+}
 
 function PlayRoutes () {
     return (
         <Routes>
             <Route path="/" element={<Play />} />
+            <Route path="/paint" element={<Paint/>}></Route>
         </Routes>
     )
 }

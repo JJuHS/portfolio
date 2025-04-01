@@ -18,6 +18,21 @@ canvas {
     box-shadow: 0 10px 18px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
+.paint-title {
+    background-color: #cae1e0;
+    width:40%;
+    height:40px;
+    text-align: center;
+    padding-top:20px;
+    border-radius:10px
+}
+
+.paint-title p {
+    color: white;
+    text-decoration: shadow;
+    font-size: 24px;
+}
+
 .color-picker {
     width: 40px;
     height: 40px;
@@ -142,6 +157,10 @@ label {
     border-radius: 10px;
     transition: opacity linear .1s;
     box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+#eraser-btn {
+    background-color: #dddddd;
 }
 
 button:hover {
