@@ -7,7 +7,7 @@ function Paint() {
         <div className="w-screen h-screen overflow-hidden flex flex-row">
             <div className="w-1/5"></div>
             <iframe 
-            src="/for_html/paint/paint.html" 
+            src={`${process.env.PUBLIC_URL}/for_html/paint/paint.html`} 
             className="w-3/5 rounded block"
             />
         </div>
