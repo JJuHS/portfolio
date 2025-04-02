@@ -4,6 +4,7 @@ import { FaList, FaTh } from "react-icons/fa";
 function Play() {
     return (
         <div>
+            {/* Title */}
             <div className="flex mt-3 h-16">
                 <div className="w-1/4"></div>
                 <div className="border-t border-b w-1/2 flex justify-center items-center">
@@ -11,6 +12,7 @@ function Play() {
                 </div>
                 <div className="w-1/4"></div>
             </div>
+            {/* 목록 / 그리드 */}
             <div className="flex mt-3 h-8">
                 <div className="w-1/6"></div>
                 <div className="border-b w-2/3 flex justify-end items-center gap-3 pr-4">
