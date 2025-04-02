@@ -32,8 +32,8 @@ function Play() {
         }
     }
 
-    const navigateDetail = (title) => {
-        navigate(`/play/${title['en']}`)
+    const navigateDetail = (url) => {
+        navigate(`/play/${url}`)
     }
     const renderPlayList = () => {
         if (isGrid) {
@@ -42,10 +42,10 @@ function Play() {
                     {playDataList.map((item) => (
                         <div 
                             key={item.id} 
-                            className="card border rounded m-2 shadow-md text-white flex flex-col items-center cursor-pointer"
-                            onClick={() => {navigateDetail(item.title)}}
+                            className="card border rounded m-2 shadow-md text-white flex flex-col items-center cursor-pointer h-3/4"
+                            onClick={() => {navigateDetail(item.url)}}
                         >
-                            <img src={item.image || playDefaultImage} alt="" className="w-1/2 h-1/2"/>
+                            <img src={item.image || playDefaultImage} alt="" className="w-1/2 h-1/2  mt-6 mb-3"/>
                             <p>{item.title[language]}</p>
                             <p className="text-[12px] px-3">{item.explanation[language]}</p>
                             <p className="text-[8px]">{{kr:'최근 업데이트', en:'recently update'}[language]} : {item.updateDate}</p>
@@ -57,7 +57,7 @@ function Play() {
             return (
                 <div className="flex flex-col">
                     {playDataList.map((item) => (
-                        <div key={item.id} className="cursor-pointer flex flex-row border rounded m-2 text-white" onClick={() => {navigateDetail(item.title)}}>
+                        <div key={item.id} className="cursor-pointer flex flex-row border rounded m-2 text-white" onClick={() => {navigateDetail(item.url)}}>
                             <img src={item.image || playDefaultImage} alt="" className="w-[120px] h-[100px]"/>
                             <div className="flex flex-col justify-center ms-5">
                                 <p>{item.title[language]}</p>
