@@ -1,4 +1,8 @@
 import { create } from 'zustand';
+import PaintIcon from '../Assets/play/paint.png'
+import MinesweeperIcon from '../Assets/play/minesweeper.png'
+
+
 const playListData = [
     {
         id:1,
@@ -14,7 +18,23 @@ const playListData = [
         craeteStartDate:'2025.04.02',
         createEndDate:'2025.04.02',
         skill:['Javascript', 'Html', 'css'],
-        image:[]
+        image:PaintIcon
+    },
+    {
+        id:2,
+        title:{
+            'kr':'지뢰찾기',
+            'en':'Minesweeper'
+        },
+        explanation:{
+            'kr':'지뢰를 피해 모든 땅을 정복하세요.',
+            'en':'Conquer all lands while avoiding mines.'
+        },
+        updateDate:'2025.04.02',
+        craeteStartDate:'2025.04.02',
+        createEndDate:'2025.04.02',
+        skill:['Javascript', 'Html', 'css'],
+        image:MinesweeperIcon
     },
 ]
 

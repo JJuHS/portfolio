@@ -4,6 +4,7 @@ import usePlayStore from "../../store/PlayStore";
 import useStyleStore from "../../store/StyleStore";
 import playDefaultImage from "../../Assets/play/play-default-img.png"
 import { useNavigate } from "react-router-dom";
+
 function Play() {
     const playDataList = usePlayStore().playListData;
     const gridOneEmpty = useStyleStore((state) => state.gridOneEmpty);
@@ -44,7 +45,7 @@ function Play() {
                             className="card border rounded m-2 shadow-md text-white flex flex-col items-center cursor-pointer"
                             onClick={() => {navigateDetail(item.title)}}
                         >
-                            <img src={item.image[0] || playDefaultImage} alt="" className="w-1/2 h-1/2"/>
+                            <img src={item.image || playDefaultImage} alt="" className="w-1/2 h-1/2"/>
                             <p>{item.title[language]}</p>
                             <p className="text-[12px] px-3">{item.explanation[language]}</p>
                             <p className="text-[8px]">{{kr:'최근 업데이트', en:'recently update'}[language]} : {item.updateDate}</p>
@@ -57,8 +58,8 @@ function Play() {
                 <div className="flex flex-col">
                     {playDataList.map((item) => (
                         <div key={item.id} className="cursor-pointer flex flex-row border rounded m-2 text-white" onClick={() => {navigateDetail(item.title)}}>
-                            <img src={item.image[0] || playDefaultImage} alt="" className="w-[120px] h-[100px]"/>
-                            <div className="flex flex-col justify-center">
+                            <img src={item.image || playDefaultImage} alt="" className="w-[120px] h-[100px]"/>
+                            <div className="flex flex-col justify-center ms-5">
                                 <p>{item.title[language]}</p>
                                 <p className="text-[10px]">{item.explanation[language]}</p>
                             </div>
