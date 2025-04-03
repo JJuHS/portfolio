@@ -4,6 +4,7 @@ import usePlayStore from "../../store/PlayStore";
 import useStyleStore from "../../store/StyleStore";
 import playDefaultImage from "../../Assets/play/play-default-img.png"
 import { useNavigate } from "react-router-dom";
+import GirhubIcon from "../../Assets/stacks/GithubIcon.png"
 
 function Play() {
     const playDataList = usePlayStore().playListData;
@@ -76,6 +77,22 @@ function Play() {
                 <div className="w-1/4"></div>
                 <div className="border-t border-b w-1/2 flex justify-center items-center">
                     <p className="text-center text-white">Mini Game</p>
+                </div>
+                <div className="w-1/4"></div>
+            </div>
+            <div className="flex mt-3 h-16">
+                <div className="w-1/4"></div>
+                <div className="border-t border-b w-1/2 flex flex-row justify-center items-center p-0">
+                    <p className="text-center text-white ">
+                        <a href="https://github.com/JJuHS/portfolio-html">
+                            <span>source code link : </span>
+                        </a>
+                    </p>
+                    <p className="text-center text-white">
+                        <a href="https://github.com/JJuHS/portfolio-html">
+                            <img src={GirhubIcon} alt="" className="h-5 w-5" />
+                        </a>
+                    </p>
                 </div>
                 <div className="w-1/4"></div>
             </div>
